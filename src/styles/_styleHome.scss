@@ -1,0 +1,20 @@
+.home{
+    width: 100%;
+    height: auto;
+    .container__body--home{
+        display: flex;
+        .item__wrap--home{
+            width: 100%;
+        }
+        .wrap__viewTask{
+            flex: 2.5;
+        }
+        .wrap__newFeed{
+            flex: 5;
+            padding:0px 20px;
+        }
+        .wrap__complementary{
+            flex: 2.5;
+        }
+    }
+}

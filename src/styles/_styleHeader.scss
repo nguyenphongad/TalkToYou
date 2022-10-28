@@ -1,0 +1,292 @@
+$main_color: #be0a88;
+$main_color-text: #822366;
+$main_color-bgr: #fff3fb;
+$main_color-white: #ffffff;
+$main_color-white-hover: #f7e6f2;
+$main_color-white-hover-brgWhite: #f3edf1;
+$main_color-border:#eccde3;
+$main_color-border-img:#cc8dba;
+$main_color-border-active:#ad6e9c;
+
+.header {
+    width: 100%;
+    height: 60px;
+    background-color: $main_color-bgr;
+    padding: 0px 70px;
+    .header__wrap--row {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        padding: 5px 0px;
+        .item__header-wrap {
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+        .wrap__item--box_first {
+            flex: 2;
+            .item_box_fisrt {
+                width: 100%;
+                & > a {
+                    > img {
+                        max-width: 100%;
+                        height: 100%;
+                        transform: scale(0.86);
+                    }
+                }
+            }
+            .box__navication {
+                margin-right: 80px;
+                display: flex;
+                align-items: center;
+                .btn_checked_navication {
+                    padding: 4px;
+                    padding-left: 9px;
+                    display: flex;
+                    border-radius: 20px;
+                    color: $main_color-text;
+                    background-color: $main_color-bgr;
+                    cursor: pointer;
+                    transition: all 0.5s;
+                    box-shadow: #2b0a0a1c 1px 2px 4px 0px;
+                    border: 1px solid #f5d3eb;
+                    > div {
+                        width: auto;
+                        font-size: 12px;
+                        margin-right: 5px;
+                        user-select: none;
+                    }
+                    i {
+                        font-size: 20px;
+                        display: block;
+                        color: $main_color-text;
+                        transition: all 0.4s;
+                    }
+                    &:hover{
+                        transform: translateY(-3px);
+                    }
+                }
+            }
+        }
+        .wrap__item--navMenu {
+            flex: 5.5;
+            display: flex;
+            .body__container--navMenu {
+                font-size: 23px;
+                display: flex;
+                margin: 0px auto;
+                .menu__column--nav {
+                    width: 125px;
+                    margin-right: 15px;
+                    .item_header--item {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        a {
+                            width: 100%;
+                            height: 100%;
+                            justify-content: center;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            text-decoration: none;
+                            color: $main_color-text;
+                            border-radius: 10px;
+                            transition: all 0.4s;
+                            i {
+                                font-size: 18px;
+                                margin-top: 2px;
+                                margin-bottom: 3px;
+                            }
+                            .item__text--status {
+                                margin-top: 3px;
+                                font-size: 13px;
+                                user-select: none;
+                                transition: all 0.5s;
+                            }
+                            &:hover {
+                                background-color: $main_color-white-hover;
+                            }
+                        }
+                    }
+                }
+                .item_header--item a.active {
+                    pointer-events: none;
+                    opacity: 1;
+                    i {
+                        color: $main_color;
+                        font-weight: 600;
+                        font-size: 30px;
+                        margin-bottom: 7px;
+                        transform: translateY(0px);
+                        animation: an_icon_menu_header 0.4s;
+                    }
+                    @keyframes an_icon_menu_header {
+                        0% {
+                            transform: translateY(10px);
+                        }
+                        50% {
+                            transform: translateY(-5px);
+                        }
+                        100% {
+                            transform: translateY(0px);
+                        }
+                    }
+                    .item__text--status {
+                        display: none;
+                    }
+                }
+                .navigation_item--menu {
+                    width: 100%;
+                    height: 4px;
+                    border-radius: 3px;
+                    padding-left: 20px;
+                    margin-right: 20px;
+                    margin-top: 2px;
+                    // box-shadow: rgba(43, 10, 10, 0.233) 0px 3px 8px;
+                    animation: an_navigation_menu 0.4s forwards;
+                    transform: scaleX(0.7);
+                }
+                @keyframes an_navigation_menu {
+                    0% {
+                        transform: scaleX(0);
+                    }
+                    60% {
+                        transform: scaleX(0.8);
+                    }
+                    100% {
+                        transform: scaleX(0.7);
+                    }
+                }
+                .active_navigation {
+                    background-color: $main_color;
+                }
+            }
+        }
+        .wrap__item--accsign {
+            flex: 2;
+            .body__container--boxDropDown {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: right;
+            }
+            .item__btn-dropDown {
+                // width: 100%;
+                display: flex;
+                justify-content: right;
+            }
+            .btn__dropDown--search {
+                cursor: pointer;
+                margin-right: 20px;
+                .border_search--header{
+                    width: 40px;height: 40px;
+                    padding: 10px;
+                    background-color: #ffffff;
+                    border-radius: 100%;
+                    transition: all 0.4s;
+                    border: 1px solid $main_color-border;
+                    box-shadow: #2b0a0a1f 1px 2px 4px 0px;
+                    i{
+                        font-size: 18px;
+                        color: $main_color-text;
+                        position: relative;
+                        top:-2px
+                    }
+                    &:hover{
+                        transform: translateY(-3px);
+                    }
+                }
+                
+            }
+            .btn__dropDown--account {
+                width: 42px;
+                height: 42px;
+                .border__img-avatar--header {
+                    padding: 2px;
+                    border: 1px solid $main_color-border-img;
+                    border-radius: 100%;
+                    cursor: pointer;
+                    transition: all 0.4s;
+                    box-shadow: #2b0a0a10 1px 2px 4px 0px;
+                    background-color: $main_color-white;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 100%;
+                    }
+                    &:hover{
+                        transform: translateY(-3px);
+                    }
+                }
+                .activeBtnDrop{
+                    border: 1px solid $main_color-text;
+                    transform: translateY(-3px);
+                }
+            }
+            .dropdown__accsign--account{
+                position: absolute;
+                top: 63px;
+                background-color: $main_color-white;
+                border-radius: 15px;
+                box-shadow: #271a231e 2px 1px 10px 1px;
+                border: 1px solid $main_color-border;
+                .box__dropwn--account{
+                    padding: 5px;
+                    position: relative;
+                    z-index: 15;
+                    .item__dropwn--account{
+                        padding: 10px 15px;
+                        cursor: pointer;
+                        margin: 6px;
+                        color: $main_color-text;
+                        transition: all 0.3s;
+                        font-weight: 500;
+                        font-size: 16px;
+                        border-radius: 10px;
+                        display: flex;
+                        align-items: center;
+                        user-select: none;
+                        &:hover{
+                            background-color: $main_color-white-hover-brgWhite;
+                        }
+                        & > i{
+                            margin-right:20px;
+                            font-size: 22px;
+                        }
+                    }
+                    
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top:-8px;
+                    width: 15px;
+                    height: 15px;
+                    background-color: $main_color-white;
+                    transform: rotate(45deg);
+                    right: 10px;
+                    z-index: 3;
+                    border-top:1px solid $main_color-border ;
+                    border-left:1px solid $main_color-border ;
+                }
+                &.active{
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0px);
+                    transition: 0.4s ease;
+                }
+                &.inactive{
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(-8px);
+                    transition: 0.4s ease;
+                }
+            }
+        }
+    }
+}
