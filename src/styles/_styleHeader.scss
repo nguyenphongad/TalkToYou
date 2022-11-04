@@ -36,7 +36,7 @@ $main_color-border-active: #ad6e9c;
                         max-width: 100%;
                         height: 100%;
                         transform: scale(0.86);
-                        filter: drop-shadow(4px 3px 1px #946084);
+                        filter: drop-shadow(2px 2px 0px #916383);
                     }
                 }
             }
@@ -112,11 +112,11 @@ $main_color-border-active: #ad6e9c;
                             transition: all 0.4s;
                             i {
                                 font-size: 18px;
-                                margin-top: 2px;
-                                margin-bottom: 3px;
+                                margin-top: 5px;
+                                margin-bottom: 2px;
                             }
                             .item__text--status {
-                                margin-top: 3px;
+                                margin: 5px 0px 4px 0px;
                                 font-size: 13px;
                                 user-select: none;
                                 transition: all 0.5s;
@@ -159,7 +159,6 @@ $main_color-border-active: #ad6e9c;
                     border-radius: 3px;
                     padding-left: 20px;
                     margin-right: 20px;
-                    margin-top: 4px;
                     // box-shadow: rgba(43, 10, 10, 0.233) 0px 3px 8px;
                     animation: an_navigation_menu 0.4s forwards;
                     transform: scaleX(0.7);
@@ -183,7 +182,7 @@ $main_color-border-active: #ad6e9c;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                transition: 0.4s ease;
+                transition: 0.4s ease ;
                 .container__box--search {
                     display: flex;
                     align-items: center;
@@ -215,7 +214,7 @@ $main_color-border-active: #ad6e9c;
                 &.active_Search {
                     opacity: 1;
                     visibility: visible;
-                    transform: translateY(-43px);
+                    transform: translateY(-47px);
                 }
                 &.inactive_Search {
                     opacity: 0;
@@ -247,7 +246,7 @@ $main_color-border-active: #ad6e9c;
                     padding: 10px;
                     background-color: #ffffff;
                     border-radius: 100%;
-                    transition: all 0.4s;
+                    transition: all 0.4s ;
                     border: 1px solid $main_color-border;
                     box-shadow: #2b0a0a1f 1px 2px 4px 0px;
                     i {
@@ -384,7 +383,7 @@ $main_color-border-active: #ad6e9c;
             cursor: pointer;
             padding: 10px 15px;
             border-radius: 10px;
-            transition: all 0.2s;
+            transition: all 0.2s linear;
             user-select: none;
             & > i {
                 margin-right: 15px;

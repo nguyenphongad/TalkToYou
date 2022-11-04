@@ -2,7 +2,9 @@ import React from 'react'
 
 function StatusFeed() {
     return (
-        <div>StatusFeed</div>
+        <div>
+            StatusFeed
+        </div>
     )
 }
 

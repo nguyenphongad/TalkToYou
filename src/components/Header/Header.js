@@ -30,6 +30,11 @@ function Header() {
 
     });
 
+    const handleOpenDropDownSearch =() =>{
+        setOpenDropDownSearch(!openDropDownSearch);
+    }
+
+
     return (
         <>
             <div className="header">
@@ -50,7 +55,7 @@ function Header() {
                     <div className="item__header-wrap wrap__item--navMenu">
                         <div className={`body__container--navMenu ${openDropDownSearch ? 'an-navMenu-drops-search-true' : 'an-navMenu-drops-search-false'}`}>
                             <CustomLink to="/feed" >
-                                <i class="fa-light fa-house-chimney"></i>
+                                <i className="fa-light fa-house-chimney"></i>
                                 <div className="item__text--status"> Home</div>
                             </CustomLink>
                             <CustomLink to="/watching" >
@@ -58,7 +63,7 @@ function Header() {
                                 <div className="item__text--status"> Watching</div>
                             </CustomLink>
                             <CustomLink to="/marketplace" >
-                                <i class="fa-light fa-cart-shopping-fast"></i>
+                                <i className="fa-light fa-cart-shopping-fast"></i>
                                 <div className="item__text--status">Marketplace</div>
                             </CustomLink>
                             <CustomLink to="/music" >
@@ -66,7 +71,7 @@ function Header() {
                                 <div className="item__text--status"> Music</div>
                             </CustomLink>
                             <CustomLink to="/learning" >
-                                <i class="fa-light fa-graduation-cap"></i>
+                                <i className="fa-light fa-graduation-cap"></i>
                                 <div className="item__text--status"> Learning</div>
                             </CustomLink>
                         </div>
@@ -79,14 +84,12 @@ function Header() {
                                 </div>
                                 <div className="ctr__search-flex">
                                     <input
-                                        autoFocus
+                                        // autoFocus
                                         type="text"
                                         placeholder="Tìm kiếm trên Talk To You"
                                         id="yourtextbox"
+                                        autoComplete="off"
                                     />
-                                    <script>
-
-                                    </script>
                                 </div>
                             </div>
 
@@ -99,9 +102,9 @@ function Header() {
                         <div className="body__container--boxDropDown" >
 
                             <div className="item__btn-dropDown btn__dropDown--search"
-                                onClick={() => setOpenDropDownSearch(!openDropDownSearch)}>
+                                onClick={handleOpenDropDownSearch}>
                                 <div className="border_search--header">
-                                    <i class={openDropDownSearch ? "fa-regular fa-bars" : "fa-regular fa-magnifying-glass"}></i>
+                                    <i className={openDropDownSearch ? "fa-regular fa-bars" : "fa-regular fa-magnifying-glass"}></i>
                                 </div>
                             </div>
                             <div className="item__btn-dropDown btn__dropDown--account" ref={dropRef}>
@@ -113,27 +116,27 @@ function Header() {
                                 <div className={`dropdown__accsign--account ${openDropDown ? 'active' : 'inactive'}`}>
                                     <div className="box__dropwn--account" >
                                         <div className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
-                                            <i class="fa-solid fa-user"></i>
+                                            <i className="fa-solid fa-user"></i>
                                             Thông tin cá nhân
                                         </div>
                                         <div className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
-                                            <i class="fa-duotone fa-gear"></i>
+                                            <i className="fa-duotone fa-gear"></i>
                                             Cài đặt
                                         </div>
                                         <div className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
-                                            <i class="fa-duotone fa-screencast"></i>
+                                            <i className="fa-duotone fa-screencast"></i>
                                             Chế độ & màn hình
                                         </div>
                                         <div className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
-                                            <i class="fa-duotone fa-keyboard"></i>
+                                            <i className="fa-duotone fa-keyboard"></i>
                                             Phím tắt & hỗ trợ
                                         </div>
                                         <div className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
-                                            <i class="fa-duotone fa-circle-info"></i>
+                                            <i className="fa-duotone fa-circle-info"></i>
                                             Trợ giúp
                                         </div>
                                         <div style={{ fontWeight: '780' }} className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
-                                            <i class="fa-solid fa-right-from-bracket"></i>
+                                            <i className="fa-solid fa-right-from-bracket"></i>
                                             Đăng xuất
                                         </div>
                                     </div>
@@ -151,15 +154,15 @@ function Header() {
                 <div className="box__suggest--search">
                     <div className="text_warning">Try searching for</div>
                     <div className="item_content_before--search">
-                        <i class="fa-light fa-clock-rotate-left"></i>
-                        Nguyễn Gia Phong
+                        <i className="fa-light fa-clock-rotate-left"></i>
+                        Nguyễn Đình Thiên
                     </div>
                     <div className="item_content_before--search">
-                        <i class="fa-light fa-clock-rotate-left"></i>
+                        <i className="fa-light fa-clock-rotate-left"></i>
                         #xuhuong
                     </div>
                     <div className="item_content_before--search">
-                        <i class="fa-light fa-clock-rotate-left"></i>
+                        <i className="fa-light fa-clock-rotate-left"></i>
                         đáp án momo sự kiện
                     </div>
                 </div>

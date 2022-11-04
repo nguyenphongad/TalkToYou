@@ -2,8 +2,12 @@ import React from 'react'
 
 function CreateStatus() {
     return (
-        <div>CreateStatus</div>
+        <>
+            <div className="box__status">
+                CreateStatus
+            </div>
+        </>
     )
 }
 
-export default CreateStatus
+export default CreateStatus;
