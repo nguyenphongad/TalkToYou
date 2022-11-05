@@ -1,19 +1,33 @@
-// import {useState } from 'react';
-
+import { useEffect, useRef, useState } from "react";
 import { withErrorBoundary } from "react-error-boundary";
 
 import ErrorComponent from "../../Errors/ErrorBoundary";
 import Logo_TTY from "../../assets/images_logo/logo_talk-to-you_v2.png";
 import CustomLink from "../../routes/customLink";
-
+import ModalMation from "../Modal/ModalMation/ModalMation";
 import Avatar_IU from "../../assets/images/avatar_IU.jpg";
-import { useEffect, useRef, useState } from "react";
-
+import { motion, AnimatePresence } from "framer-motion";
 
 
 function Header() {
     const [openDropDown, setOpenDropDown] = useState(false);
     const [openDropDownSearch, setOpenDropDownSearch] = useState(false);
+    const [modalOpen_think, setModalOpen] = useState(false);
+
+    const openModal_think = () => setModalOpen(true);
+    const closeModal_think = () => setModalOpen(false);
+
+    function TextContentModalThink() {
+        return (
+            <>
+                Hi everybody, đây là một bản beta bởi mình ấp ủ nó suốt thời gian học đại học đến giờ,
+                mình sẽ sáng tạo 1 cái giao diện mới cùng với kết hợp mp3
+                để nó gọi là "sống động" một chút. Nó còn rất nhiều cái thiếu sót. <br></br>
+                Mọi người nhận xét và cho em xin lời góp ý ạ. Em cảm ơn rất nhiều!<br></br>
+                <div style={{ 'float': 'right' }}>NV Phong</div>
+            </>
+        );
+    }
 
     let dropRef = useRef();
 
@@ -30,8 +44,14 @@ function Header() {
 
     });
 
-    const handleOpenDropDownSearch =() =>{
+    const handleOpenDropDownSearch = () => {
         setOpenDropDownSearch(!openDropDownSearch);
+    }
+    const handleOpenDropDown = () => {
+        setOpenDropDown(!openDropDown);
+        if (openDropDownSearch)
+            setOpenDropDownSearch(false);
+
     }
 
 
@@ -46,11 +66,27 @@ function Header() {
                             </a>
                         </div>
                         <div className="item_box_fisrt box__navication">
-                            <div className="btn_checked_navication">
+                            <div className="btn_checked_navication"
+                            onClick={() => (modalOpen_think ? closeModal_think() : openModal_think())}>
                                 <div>Version</div>
                                 <i className="fa-duotone fa-circle-info"></i>
                             </div>
                         </div>
+                        <AnimatePresence
+
+                            initial={false}
+                            exitBeforeEnter={true}
+                            onExitComplete={() => null}
+                        >
+
+                            {modalOpen_think && <ModalMation
+                                modalOpen={modalOpen_think}
+                                handleClose={closeModal_think}
+                                text_header="Create a post"
+                                content_modal={<TextContentModalThink />}
+                            />}
+
+                        </AnimatePresence>
                     </div>
                     <div className="item__header-wrap wrap__item--navMenu">
                         <div className={`body__container--navMenu ${openDropDownSearch ? 'an-navMenu-drops-search-true' : 'an-navMenu-drops-search-false'}`}>
@@ -110,7 +146,7 @@ function Header() {
                             <div className="item__btn-dropDown btn__dropDown--account" ref={dropRef}>
                                 <div
                                     className={`border__img-avatar--header ${openDropDown ? 'activeBtnDrop' : ''}`}
-                                    onClick={() => { setOpenDropDown(!openDropDown) }} >
+                                    onClick={handleOpenDropDown} >
                                     <img src={Avatar_IU} />
                                 </div>
                                 <div className={`dropdown__accsign--account ${openDropDown ? 'active' : 'inactive'}`}>

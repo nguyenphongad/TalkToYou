@@ -31,10 +31,11 @@ body {
         }
     }
 }
-@import "./styleHeader";
-@import "./styleHomeComplementary";
-@import "./styleHome";
-@import "./styleHomeViewTask";
+@import "./styleHeader.scss";
+@import "./StyleHome/styleHome.scss";
+@import "./StyleHome/styleHomeViewTask";
+@import "./StyleHome/styleHomeComplementary";
+
 
 .body_loading_start {
     @include styleBackgroundLoading();

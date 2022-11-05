@@ -16,7 +16,7 @@ function Home() {
                     <div className="item__wrap--home wrap__newFeed">
                         <CreateStatus></CreateStatus>
                         <StatusFeed></StatusFeed>
-                        homeggggggg<br />
+                        home<br />
                         home<br />
                         home<br />
                         home<br />
