@@ -15,7 +15,7 @@ const dropIn = {
             damping: 40,
             stiffness: 700,
         },
-        scale : 1
+        scale : 1,
     },
     exit: {
         // y: "100vh",

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import Avatar from "../../../assets/images/avatar_IU.jpg";
+import Avatar_TTY from "../../../assets/images/photo_status_TTY/avatar_TTY.png";
 
 import { motion, AnimatePresence } from "framer-motion";
 import Typical from 'react-typical';
@@ -14,9 +14,19 @@ import ErrorComponent from '../../../Errors/ErrorBoundary';
 function CreateStatus() {
 
     const [modalOpen, setModalOpen] = useState(false);
-
-    const close = () => setModalOpen(false);
-    const open = () => setModalOpen(true);
+    const open = () =>{ 
+        setModalOpen(true);
+        document.body.style.overflowY = "hidden";
+        document.body.style.paddingRight = "16px";
+        document.getElementById("hu").style.paddingRight= "16px";
+    }
+    const close = () =>{ 
+        setModalOpen(false); 
+        document.body.style.removeProperty('overflow');
+        document.body.style.paddingRight = "0px";
+        document.getElementById("hu").style.paddingRight= "0px";
+    }
+    
 
     const list_btn_control_work = [
         {
@@ -65,7 +75,7 @@ function CreateStatus() {
                     <div className="item__nav header__create">
                         <div className="item_header btn__avatar--user">
                             <div className="border__avatar--user">
-                                <img src={Avatar} alt="avatar" className="img--avatar" />
+                                <img src={Avatar_TTY} alt="avatar" className="img--avatar" />
                             </div>
                         </div>
                         <motion.div className="item_header create__text--think"

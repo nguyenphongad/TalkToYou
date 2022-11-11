@@ -1,19 +1,12 @@
-$main_color: #be0a88;
-$main_color-text: #822366;
-$main_color-bgr: #fff3fb;
-$main_color-white: #ffffff;
-$main_color-white-hover: #f7e6f2;
-$main_color-white-hover-brgWhite: #f3edf1;
-$main_color-border: #eccde3;
-$main_color-border-img: #cc8dba;
-$main_color-border-active: #ad6e9c;
+@import "./+styleMain.scss";
 
 .header {
     width: 100%;
     height: 60px;
     background-color: $main_color-bgr;
     padding: 0px 70px;
-    box-shadow: #42193625 4px 1px 11px 1px;
+    // box-shadow: #42193625 4px 1px 11px 1px;
+    box-shadow: 0 1px 2px 0 #0000001a, 0 1px 13px 0 #0000001a, 0 1px 6px 0 #0000001a;
     .header__wrap--row {
         width: 100%;
         height: 100%;
@@ -214,7 +207,7 @@ $main_color-border-active: #ad6e9c;
                 &.active_Search {
                     opacity: 1;
                     visibility: visible;
-                    transform: translateY(-47px);
+                    transform: translateY(-46px);
                 }
                 &.inactive_Search {
                     opacity: 0;

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import Avatar_user from '../../../assets/images/avatar_IU.jpg';
+import Avatar_TTY from '../../../assets/images/photo_status_TTY/avatar_TTY.png';
 
 function ContentCreateModal() {
 
@@ -17,7 +17,7 @@ function ContentCreateModal() {
                         <div className=" avatar_user">
                             <div className="align_item_center">
                                 <div className="border__img--avatar-user">
-                                    <img src={Avatar_user} />
+                                    <img src={Avatar_TTY} />
                                 </div>
                             </div>
 

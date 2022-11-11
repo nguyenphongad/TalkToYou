@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import "./_styleModal.scss";
+import { useState } from "react";
+import "../../../styles/Modal/_styleModal.scss";
 
 const Backdrop = ({ children, onClick }) => {
 

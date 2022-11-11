@@ -5,8 +5,10 @@ import ErrorComponent from "../../Errors/ErrorBoundary";
 import Logo_TTY from "../../assets/images_logo/logo_talk-to-you_v2.png";
 import CustomLink from "../../routes/customLink";
 import ModalMation from "../Modal/ModalMation/ModalMation";
-import Avatar_IU from "../../assets/images/avatar_IU.jpg";
-import { motion, AnimatePresence } from "framer-motion";
+
+import Avatar_TTY from "../../assets/images/photo_status_TTY/avatar_TTY.png";
+
+import { AnimatePresence } from "framer-motion";
 
 
 function Header() {
@@ -14,8 +16,18 @@ function Header() {
     const [openDropDownSearch, setOpenDropDownSearch] = useState(false);
     const [modalOpen_think, setModalOpen] = useState(false);
 
-    const openModal_think = () => setModalOpen(true);
-    const closeModal_think = () => setModalOpen(false);
+    const openModal_think = () => {
+        setModalOpen(true);
+        document.body.style.overflowY = "hidden";
+        document.body.style.paddingRight = "16px";
+        document.getElementById("hu").style.paddingRight= "16px";
+    }
+    const closeModal_think = () => {
+        setModalOpen(false);
+        document.body.style.removeProperty('overflow');
+        document.body.style.paddingRight = "0px";
+        document.getElementById("hu").style.paddingRight= "0px";
+    }
 
     function TextContentModalThink() {
         return (
@@ -30,18 +42,13 @@ function Header() {
     }
 
     let dropRef = useRef();
-
     useEffect(() => {
         let handler = (e) => {
-            if (!dropRef.current.contains(e.target)) {
+            if (!dropRef.current.contains(e.target))
                 setOpenDropDown(false);
-            }
         }
         document.addEventListener("mousedown", handler);
-        return () => {
-            document.removeEventListener("mousedown", handler);
-        };
-
+        return () => document.removeEventListener("mousedown", handler);
     });
 
     const handleOpenDropDownSearch = () => {
@@ -49,16 +56,16 @@ function Header() {
     }
     const handleOpenDropDown = () => {
         setOpenDropDown(!openDropDown);
-        if (openDropDownSearch)
+        if (openDropDownSearch) {
             setOpenDropDownSearch(false);
+        }
+
 
     }
-
-
     return (
         <>
-            <div className="header">
-                <div className="header__wrap--row">
+            <div className="header" >
+                <div className="header__wrap--row" id="hu">
                     <div className="item__header-wrap wrap__item--box_first">
                         <div className="item_box_fisrt box__logo">
                             <a href="#home">
@@ -67,25 +74,22 @@ function Header() {
                         </div>
                         <div className="item_box_fisrt box__navication">
                             <div className="btn_checked_navication"
-                            onClick={() => (modalOpen_think ? closeModal_think() : openModal_think())}>
+                                onClick={() => (modalOpen_think ? closeModal_think() : openModal_think())}>
                                 <div>Version</div>
                                 <i className="fa-duotone fa-circle-info"></i>
                             </div>
                         </div>
                         <AnimatePresence
-
                             initial={false}
                             exitBeforeEnter={true}
                             onExitComplete={() => null}
                         >
-
                             {modalOpen_think && <ModalMation
                                 modalOpen={modalOpen_think}
                                 handleClose={closeModal_think}
                                 text_header="Create a post"
                                 content_modal={<TextContentModalThink />}
                             />}
-
                         </AnimatePresence>
                     </div>
                     <div className="item__header-wrap wrap__item--navMenu">
@@ -111,8 +115,6 @@ function Header() {
                                 <div className="item__text--status"> Learning</div>
                             </CustomLink>
                         </div>
-
-
                         <div className={`box__dropdown--search ${openDropDownSearch ? 'active_Search' : 'inactive_Search'}`} >
                             <div className="container__box--search" >
                                 <div className="border-icon-search">
@@ -128,11 +130,7 @@ function Header() {
                                     />
                                 </div>
                             </div>
-
-
                         </div>
-
-
                     </div>
                     <div className="item__header-wrap wrap__item--accsign" >
                         <div className="body__container--boxDropDown" >
@@ -147,7 +145,7 @@ function Header() {
                                 <div
                                     className={`border__img-avatar--header ${openDropDown ? 'activeBtnDrop' : ''}`}
                                     onClick={handleOpenDropDown} >
-                                    <img src={Avatar_IU} />
+                                    <img src={Avatar_TTY} />
                                 </div>
                                 <div className={`dropdown__accsign--account ${openDropDown ? 'active' : 'inactive'}`}>
                                     <div className="box__dropwn--account" >
