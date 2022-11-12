@@ -10,7 +10,7 @@ import Photo_status_id_1_IU from "../../../assets/images/photo_status_IU/picture
 import Photo_status_id_1_ngoc from "../../../assets/images/photo_status_Ngoc/picture_status_ngoc_1.jpg";
 import Photo_status_id_1_quyen from "../../../assets/images/photo_status_quyen/picture_status_quyen_1.jpg";
 
-import { NavLink } from 'react-router-dom';
+import { NavLink, Route, Routes } from 'react-router-dom';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -25,79 +25,104 @@ import "tippy.js/themes/material.css";
 
 import { AnimatePresence } from "framer-motion";
 
+function Tty(){
+    return (
+        <>
+            trang chủ tty
+        </>
+    )
+}
+function Thien(){
+    return (
+        <>
+            trang chủ thien
+        </>
+    )
+}
+
+
 function Status_feed() {
 
     const up_header_status_user = [
         {
             id: 1,
-            id_page_user: "talktoyou",
+            id_page_user: '/talktoyou',
             image_avatar: Avatar_1,
             firt_name: "Talk To You",
             last_name: "",
             active_license: true,
             id_user: "@talktoyou",
             active_type_status: "fa-solid fa-badge-check",
-            date_create_status: 1 + " giờ trước",
+            type_post: "Public",
+            date_create_status: 1 + " day ago",
 
-            content: "WECOME TO TALK TO YOU 🤗 ",
+            content: "Wecome to TALK TO YOU 🤗 ",
             image: Photo_status_id_1_TTY,
-            view_comment: 1.2 + "K",
-            view_like: 2.3 + "M",
-            view_share: 2.2 + "K",
+            view_comment: 9.2 + "M",
+            view_like: 30.3 + "M",
+            view_share: 6 + "M",
+
+            routee : Tty
         },
         {
             id: 2,
-            id_page_user : "dlwlrma",
+            id_page_user: '/dlwlrma',
             image_avatar: Avatar_2,
             firt_name: "Nguyễn Đình",
             last_name: "Thiên",
             active_license: true,
             id_user: "@dlwlrma",
             active_type_status: "fa-solid fa-badge-check",
-            date_create_status: 2 + " giờ trước",
+            type_post: "Public",
+            date_create_status: 2 + " hour ago",
 
             content: "지은 언니 바빠요?ㅜㅜ 너무 보고 싶어서🤣😂👍",
             image: Photo_status_id_1_IU,
             view_comment: 47.3 + "K",
             view_like: 5.5 + "M",
             view_share: 17.5 + "K",
-        },
-        {
-            id: 3,
-            id_page_user: "ngocpham509",
-            image_avatar: Avatar_3,
-            firt_name: "Ngọc",
-            last_name: "Phạm",
-            active_license: false,
-            id_user: "@ngocpham509",
-            active_type_status: "fa-solid fa-badge-check",
-            date_create_status: 9 + " phút trước",
 
-            content: "ỏ, đi chơi cùng thằng bạn 🤣",
-            image: Photo_status_id_1_ngoc,
-            // image: Video_1,
-            view_comment: 5,
-            view_like: 99,
-            view_share: 4,
+            routee : Thien
         },
-        {
-            id: 4,
-            id_page_user : "tranvanquyen23",
-            image_avatar: Avatar_4,
-            firt_name: "Trần Văn",
-            last_name: "Quyến",
-            active_license: false,
-            id_user: "@tranvanquyen23",
-            active_type_status: "fa-solid fa-badge-check",
-            date_create_status: 9 + " phút trước",
+        // {
+        //     id: 3,
+        //     id_page_user: "ngocpham509",
+        //     image_avatar: Avatar_3,
+        //     firt_name: "Ngọc",
+        //     last_name: "Phạm",
+        //     active_license: false,
+        //     id_user: "@ngocpham509",
+        //     active_type_status: "fa-solid fa-badge-check",
+        //     type_post: "Friends",
+        //     date_create_status: 9 + " hour ago",
 
-            content: "Gặp Hiếu PC phải xin kiểu ảnh chớ nhể (●'◡'●)",
-            image: Photo_status_id_1_quyen,
-            // image: Video_1,
-            view_comment: 333,
-            view_like: 999,
-            view_share: 206,
-        }
+
+        //     content: "ỏ, đi chơi cùng thằng bạn 🤣",
+        //     image: Photo_status_id_1_ngoc,
+        //     // image: Video_1,
+        //     view_comment: 5,
+        //     view_like: 99,
+        //     view_share: 4,
+        // },
+        // {
+        //     id: 4,
+        //     id_page_user: "tranvanquyen23",
+        //     image_avatar: Avatar_4,
+        //     firt_name: "Trần Văn",
+        //     last_name: "Quyến",
+        //     active_license: false,
+        //     id_user: "@tranvanquyen23",
+        //     active_type_status: "fa-solid fa-badge-check",
+        //     type_post: "Friends",
+        //     date_create_status: 9 + " munite ago",
+
+        //     content: "Gặp Hiếu PC phải xin kiểu ảnh chớ nhể (●'◡'●)",
+        //     image: Photo_status_id_1_quyen,
+        //     // image: Video_1,
+        //     view_comment: 333,
+        //     view_like: 999,
+        //     view_share: 206,
+        // },
     ];
 
     const [modal_select, setModalOpen] = useState(false);
@@ -106,6 +131,32 @@ function Status_feed() {
     const open = () => setModalOpen(true);
 
     const list_up_status_feed_user = up_header_status_user.map((item_info_header_status) => {
+        function TypePost() {
+            if (item_info_header_status.type_post === "Public") {
+                return (
+                    <Tippy
+                        content={item_info_header_status.type_post}
+                        animation="scale-extreme"
+                        delay={200}
+                        theme="material"
+                    >
+                        <i class="fa-regular fa-earth-americas"></i>
+                    </Tippy>
+                )
+
+            } else if (item_info_header_status.type_post === "Friends") {
+                return (
+                    <Tippy
+                        content={item_info_header_status.type_post}
+                        animation="scale-extreme"
+                        delay={200}
+                        theme="material"
+                    >
+                        <i class="fa-regular fa-user-group"></i>
+                    </Tippy>
+                )
+            }
+        }
         return (
             <>
                 <div className="box__status" >
@@ -114,7 +165,7 @@ function Status_feed() {
                             <div className="flex--column">
                                 <div className="block__item--header block__avatar--user">
                                     <div className="border__avatar--user">
-                                        <NavLink to={"#/"+ item_info_header_status.id_page_user} className="">
+                                        <NavLink to={"#/" + item_info_header_status.id_page_user} className="">
                                             <img src={item_info_header_status.image_avatar} loading="lazy" />
                                         </NavLink>
                                     </div>
@@ -123,7 +174,7 @@ function Status_feed() {
                                     <div className="flex__box--inline">
                                         <div className="item__inline">
                                             <div className="name-user">
-                                                <NavLink to={"#user/"+ item_info_header_status.id_page_user}>
+                                                <NavLink to={"#/" + item_info_header_status.id_page_user}>
                                                     <span className="text__name--user hover_text_under">
                                                         {item_info_header_status.firt_name}&#160;{item_info_header_status.last_name}
                                                     </span>
@@ -134,7 +185,8 @@ function Status_feed() {
                                                             delay={200}
                                                             theme="material"
                                                         >
-                                                            <i class="fa-solid fa-badge-check" ></i>
+                                                            {/* <i class="fa-solid fa-badge-check" ></i> */}
+                                                            <i class="fa-solid fa-octagon-check"></i>
                                                         </Tippy>
                                                         : ""}
                                                 </NavLink>
@@ -142,7 +194,7 @@ function Status_feed() {
                                         </div>
                                         <div className="item__inline">
                                             <div className="id_user">
-                                                <NavLink to={"#/"+ item_info_header_status.id_page_user}>
+                                                <NavLink to={"#/" + item_info_header_status.id_page_user}>
                                                     <span className="hover_text_under">
                                                         {item_info_header_status.id_user}
                                                     </span>
@@ -162,6 +214,11 @@ function Status_feed() {
                                                 </div>
 
                                                 <i class="fa-regular fa-period"></i>
+                                                <div className="icon_type">
+                                                    <TypePost />
+                                                </div>
+                                                <i class="fa-regular fa-period"></i>
+
                                                 <NavLink to="#link_status">
                                                     <Tippy
                                                         content={item_info_header_status.date_create_status}
@@ -202,7 +259,6 @@ function Status_feed() {
                                 <img src={item_info_header_status.image} loading="lazy" />
 
                             </NavLink>
-
                         </div>
 
                         <div className="item__column control feed__actions__status">
@@ -274,6 +330,10 @@ function Status_feed() {
                     </div>
                 </div >
 
+                {/* <Routes>
+                    <Route path={item_info_header_status.id_page_user} element={item_info_header_status.routee} />
+                </Routes> */}
+                
 
             </>
         )

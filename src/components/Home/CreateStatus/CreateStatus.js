@@ -14,90 +14,46 @@ import ErrorComponent from '../../../Errors/ErrorBoundary';
 function CreateStatus() {
 
     const [modalOpen, setModalOpen] = useState(false);
-    const open = () =>{ 
+    const open = () => {
         setModalOpen(true);
         document.body.style.overflowY = "hidden";
         document.body.style.paddingRight = "16px";
-        document.getElementById("hu").style.paddingRight= "16px";
+        document.getElementById("hu").style.paddingRight = "16px";
     }
-    const close = () =>{ 
-        setModalOpen(false); 
+    const close = () => {
+        setModalOpen(false);
         document.body.style.removeProperty('overflow');
         document.body.style.paddingRight = "0px";
-        document.getElementById("hu").style.paddingRight= "0px";
+        document.getElementById("hu").style.paddingRight = "0px";
     }
-    
-
-    const list_btn_control_work = [
-        {
-            icon: "fa-regular fa-folder-image",
-            id: "blue",
-            text: "Photo",
-        },
-        {
-            icon: "fa-solid fa-camcorder",
-            id: "red",
-            text: "Live",
-        },
-        {
-            icon: "fa-light fa-face-awesome",
-            id: "yellow",
-            text: "Feeling",
-        },
-        {
-            icon: "fa-duotone fa-graduation-cap",
-            id: "green",
-            text: "Lesson",
-        },
-
-    ];
-
-    const list_element = list_btn_control_work.map((item_control_work, index) => {
-        return (
-            <motion.div className="item_control--work"
-                onClick={() => (modalOpen ? close() : open())}
-            >
-                <i className={item_control_work.icon} id={item_control_work.id}></i>
-                <div className="btn__text--work">
-                    {item_control_work.text}
-
-                </div>
-
-            </motion.div>
-
-        )
-    });
 
     return (
         <>
             <div className="box__status">
                 <div className="body__create--status">
-                    <div className="item__nav header__create">
-                        <div className="item_header btn__avatar--user">
-                            <div className="border__avatar--user">
-                                <img src={Avatar_TTY} alt="avatar" className="img--avatar" />
-                            </div>
+                    <div className="item__row-nav btn__avatar--user">
+                        <div className="border__avatar--user">
+                            <img src={Avatar_TTY} alt="avatar" className="img--avatar" />
                         </div>
-                        <motion.div className="item_header create__text--think"
-                            onClick={() => (modalOpen ? close() : open())}>
-                            <div className="btn__input--content" id="id_context">
-                                <Typical
-                                    // loop={Infinity}
-                                    wrapper="div"
-                                    steps={[
-                                        "What do you think?", 2000,
-                                        // "Viết lên cảm xúc của bạn ngay đây nhé !",3000
-                                    ]}
-                                />
-                            </div>
-                        </motion.div>
+                    </div>
+                    <div className="item__row-nav create__text--think"
+                        onClick={() => (modalOpen ? close() : open())}>
+                        <div className="btn__input--content" id="id_context">
+                            <Typical
+                                wrapper="div"
+                                className="text_think_create"
+                                steps={[
+                                    "Talk To You ơi, what are you thinking?", 2000,
+                                ]}
+                            />
+                        </div>
+                    </div>
+                    <div className="item__row-nav btn__create--post" 
+                    onClick={() => (modalOpen ? close() : open())}>
+                        <i class="fa-solid fa-plus"></i>
+                        <div className="text__btn_create">Create&#160;Post</div>
+                    </div>
 
-                    </div>
-                    <div className="item__nav footer__create">
-                        <div className="btn__control--work">
-                            {list_element}
-                        </div>
-                    </div>
                 </div>
                 <AnimatePresence
 

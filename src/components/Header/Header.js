@@ -9,6 +9,7 @@ import ModalMation from "../Modal/ModalMation/ModalMation";
 import Avatar_TTY from "../../assets/images/photo_status_TTY/avatar_TTY.png";
 
 import { AnimatePresence } from "framer-motion";
+import LoadingPage from "../../views/LoadingPage";
 
 
 function Header() {
@@ -20,23 +21,26 @@ function Header() {
         setModalOpen(true);
         document.body.style.overflowY = "hidden";
         document.body.style.paddingRight = "16px";
-        document.getElementById("hu").style.paddingRight= "16px";
+        document.getElementById("hu").style.paddingRight = "16px";
     }
     const closeModal_think = () => {
         setModalOpen(false);
         document.body.style.removeProperty('overflow');
         document.body.style.paddingRight = "0px";
-        document.getElementById("hu").style.paddingRight= "0px";
+        document.getElementById("hu").style.paddingRight = "0px";
     }
+
 
     function TextContentModalThink() {
         return (
             <>
-                Hi everybody, đây là một bản beta bởi mình ấp ủ nó suốt thời gian học đại học đến giờ,
-                mình sẽ sáng tạo 1 cái giao diện mới cùng với kết hợp mp3
-                để nó gọi là "sống động" một chút. Nó còn rất nhiều cái thiếu sót. <br></br>
-                Mọi người nhận xét và cho em xin lời góp ý ạ. Em cảm ơn rất nhiều!<br></br>
-                <div style={{ 'float': 'right' }}>NV Phong</div>
+                <div>
+                    Hi everybody, đây là một bản beta bởi mình ấp ủ nó suốt thời gian học đại học đến giờ,
+                    mình sẽ sáng tạo 1 cái giao diện mới cùng với kết hợp mp3
+                    để nó gọi là "sống động" một chút. Nó còn rất nhiều cái thiếu sót. <br></br>
+                    Mọi người nhận xét và cho em xin lời góp ý ạ. Em cảm ơn rất nhiều!<br></br>
+                    <div style={{ 'float': 'right' }}>NV Phong</div>
+                </div>
             </>
         );
     }
@@ -56,12 +60,14 @@ function Header() {
     }
     const handleOpenDropDown = () => {
         setOpenDropDown(!openDropDown);
+        
         if (openDropDownSearch) {
             setOpenDropDownSearch(false);
         }
 
 
     }
+
     return (
         <>
             <div className="header" >
@@ -87,7 +93,7 @@ function Header() {
                             {modalOpen_think && <ModalMation
                                 modalOpen={modalOpen_think}
                                 handleClose={closeModal_think}
-                                text_header="Create a post"
+                                text_header="Talk To You V2"
                                 content_modal={<TextContentModalThink />}
                             />}
                         </AnimatePresence>
@@ -124,7 +130,7 @@ function Header() {
                                     <input
                                         // autoFocus
                                         type="text"
-                                        placeholder="Tìm kiếm trên Talk To You"
+                                        placeholder="Search on Talk To You"
                                         id="yourtextbox"
                                         autoComplete="off"
                                     />
@@ -151,27 +157,27 @@ function Header() {
                                     <div className="box__dropwn--account" >
                                         <div className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
                                             <i className="fa-solid fa-user"></i>
-                                            Thông tin cá nhân
+                                            Personal page
                                         </div>
                                         <div className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
                                             <i className="fa-duotone fa-gear"></i>
-                                            Cài đặt
+                                            Setting
                                         </div>
                                         <div className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
                                             <i className="fa-duotone fa-screencast"></i>
-                                            Chế độ & màn hình
+                                            Mode & Screen
                                         </div>
                                         <div className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
                                             <i className="fa-duotone fa-keyboard"></i>
-                                            Phím tắt & hỗ trợ
+                                            Shortcuts & Support
                                         </div>
                                         <div className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
                                             <i className="fa-duotone fa-circle-info"></i>
-                                            Trợ giúp
+                                            Help
                                         </div>
                                         <div style={{ fontWeight: '780' }} className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
                                             <i className="fa-solid fa-right-from-bracket"></i>
-                                            Đăng xuất
+                                            Log out
                                         </div>
                                     </div>
                                 </div>
