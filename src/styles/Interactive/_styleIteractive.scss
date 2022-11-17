@@ -1,0 +1,48 @@
+.wrap__interactive {
+    width: 100%;
+    height: 60px;
+    background-color: $main_color-white;
+    position: sticky;
+    bottom: 15px;
+    border: 1px solid $main_color-border;
+    border-radius: 12px;
+    .body__interactive--row {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        .item__control--inter {
+            width: 100%;
+            margin: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .border-style-btn {
+                width: 45px;
+                height: 45px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid $main_color-border;
+                border-radius: 100%;
+                cursor: pointer;
+                transition: all 0.4s;
+                background-color: $main_color-bgr;
+                &> i {
+                    font-size: 22px;
+                    color: $main_color-text;
+                }
+                &:hover {
+                    transform: translateY(-3px);
+                }
+            }
+            &:last-child{
+                .border-style-btn{
+                    background-color: $main_color-text;
+                    &>i{
+                        color: $main_color-white;
+                    }
+                }
+            }
+        }
+    }
+}

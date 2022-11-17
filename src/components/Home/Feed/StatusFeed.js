@@ -14,123 +14,106 @@ import { NavLink, Route, Routes } from 'react-router-dom';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-import 'tippy.js/animations/shift-toward.css';
 import 'tippy.js/animations/scale-extreme.css';
-import "tippy.js/themes/translucent.css";
-import "tippy.js/themes/light.css";
-import "tippy.js/themes/light-border.css";
 import "tippy.js/themes/material.css";
 
 // import Modal_select from "../../../modal_select_status/modal_select";
 
 import { AnimatePresence } from "framer-motion";
+import Map from './Map';
 
-function Tty(){
-    return (
-        <>
-            trang chủ tty
-        </>
-    )
-}
-function Thien(){
-    return (
-        <>
-            trang chủ thien
-        </>
-    )
-}
+import BackGround from './ModalStatusSize/Background';
+import ModalStatus from './ModalStatusSize/ModalStatus';
 
+const up_header_status_user = [
+    {
+        id: 1,
+        id_page_user: '/talktoyou',
+        image_avatar: Avatar_1,
+        firt_name: "Talk To You",
+        last_name: "",
+        active_license: true,
+        id_user: "@talktoyou",
+        active_type_status: "fa-solid fa-badge-check",
+        type_post: "Public",
+        date_create_status: 1 + " day ago",
 
-function Status_feed() {
+        content: "Wecome to TALK TO YOU 🤗 ",
+        image: Photo_status_id_1_TTY,
+        view_comment: 9.2 + "M",
+        view_like: 30.3 + "M",
+        view_share: 6 + "M",
+    },
+    {
+        id: 2,
+        id_page_user: '/dlwlrma',
+        image_avatar: Avatar_2,
+        firt_name: "Nguyễn Đình",
+        last_name: "Thiên",
+        active_license: true,
+        id_user: "@dlwlrma",
+        active_type_status: "fa-solid fa-badge-check",
+        type_post: "Public",
+        date_create_status: 2 + " hour ago",
 
-    const up_header_status_user = [
-        {
-            id: 1,
-            id_page_user: '/talktoyou',
-            image_avatar: Avatar_1,
-            firt_name: "Talk To You",
-            last_name: "",
-            active_license: true,
-            id_user: "@talktoyou",
-            active_type_status: "fa-solid fa-badge-check",
-            type_post: "Public",
-            date_create_status: 1 + " day ago",
+        content: "지은 언니 바빠요?ㅜㅜ 너무 보고 싶어서🤣😂👍",
+        image: Photo_status_id_1_IU,
+        view_comment: 47.3 + "K",
+        view_like: 5.5 + "M",
+        view_share: 17.5 + "K",
 
-            content: "Wecome to TALK TO YOU 🤗 ",
-            image: Photo_status_id_1_TTY,
-            view_comment: 9.2 + "M",
-            view_like: 30.3 + "M",
-            view_share: 6 + "M",
-
-            routee : Tty
-        },
-        {
-            id: 2,
-            id_page_user: '/dlwlrma',
-            image_avatar: Avatar_2,
-            firt_name: "Nguyễn Đình",
-            last_name: "Thiên",
-            active_license: true,
-            id_user: "@dlwlrma",
-            active_type_status: "fa-solid fa-badge-check",
-            type_post: "Public",
-            date_create_status: 2 + " hour ago",
-
-            content: "지은 언니 바빠요?ㅜㅜ 너무 보고 싶어서🤣😂👍",
-            image: Photo_status_id_1_IU,
-            view_comment: 47.3 + "K",
-            view_like: 5.5 + "M",
-            view_share: 17.5 + "K",
-
-            routee : Thien
-        },
-        // {
-        //     id: 3,
-        //     id_page_user: "ngocpham509",
-        //     image_avatar: Avatar_3,
-        //     firt_name: "Ngọc",
-        //     last_name: "Phạm",
-        //     active_license: false,
-        //     id_user: "@ngocpham509",
-        //     active_type_status: "fa-solid fa-badge-check",
-        //     type_post: "Friends",
-        //     date_create_status: 9 + " hour ago",
+    },
+    {
+        id: 3,
+        id_page_user: "ngocpham509",
+        image_avatar: Avatar_3,
+        firt_name: "Ngọc",
+        last_name: "Phạm",
+        active_license: false,
+        id_user: "@ngocpham509",
+        active_type_status: "fa-solid fa-badge-check",
+        type_post: "Friends",
+        date_create_status: 9 + " hour ago",
 
 
-        //     content: "ỏ, đi chơi cùng thằng bạn 🤣",
-        //     image: Photo_status_id_1_ngoc,
-        //     // image: Video_1,
-        //     view_comment: 5,
-        //     view_like: 99,
-        //     view_share: 4,
-        // },
-        // {
-        //     id: 4,
-        //     id_page_user: "tranvanquyen23",
-        //     image_avatar: Avatar_4,
-        //     firt_name: "Trần Văn",
-        //     last_name: "Quyến",
-        //     active_license: false,
-        //     id_user: "@tranvanquyen23",
-        //     active_type_status: "fa-solid fa-badge-check",
-        //     type_post: "Friends",
-        //     date_create_status: 9 + " munite ago",
+        content: "ỏ, đi chơi cùng thằng bạn 🤣",
+        image: Photo_status_id_1_ngoc,
+        // image: Video_1,
+        view_comment: 5,
+        view_like: 99,
+        view_share: 4,
+    },
+    {
+        id: 4,
+        id_page_user: "tranvanquyen23",
+        image_avatar: Avatar_4,
+        firt_name: "Trần Văn",
+        last_name: "Quyến",
+        active_license: false,
+        id_user: "@tranvanquyen23",
+        active_type_status: "fa-solid fa-badge-check",
+        type_post: "Friends",
+        date_create_status: 9 + " munite ago",
 
-        //     content: "Gặp Hiếu PC phải xin kiểu ảnh chớ nhể (●'◡'●)",
-        //     image: Photo_status_id_1_quyen,
-        //     // image: Video_1,
-        //     view_comment: 333,
-        //     view_like: 999,
-        //     view_share: 206,
-        // },
-    ];
+        content: "Gặp Hiếu PC phải xin kiểu ảnh chớ nhể (●'◡'●)",
+        image: Photo_status_id_1_quyen,
+        // image: Video_1,
+        view_comment: 333,
+        view_like: 999,
+        view_share: 206,
+    },
+];
+
+function StatusFeed() {
+
 
     const [modal_select, setModalOpen] = useState(false);
 
     const close = () => setModalOpen(false);
     const open = () => setModalOpen(true);
 
-    const list_up_status_feed_user = up_header_status_user.map((item_info_header_status) => {
+    const list_up_status_feed_user = up_header_status_user.map((item_info_header_status, index) => {
+
         function TypePost() {
             if (item_info_header_status.type_post === "Public") {
                 return (
@@ -156,10 +139,11 @@ function Status_feed() {
                     </Tippy>
                 )
             }
-        }
+        };
+
         return (
             <>
-                <div className="box__status" >
+                <div className="box__status" key={item_info_header_status.id}>
                     <div className="body__status--table">
                         <div className="item__column--status header__status">
                             <div className="flex--column">
@@ -239,7 +223,7 @@ function Status_feed() {
                                     <div className="flex__btn--more"
                                         onClick={() => (modal_select ? close() : open())}
                                     >
-                                        <i class="fa-solid fa-ellipsis" ></i>
+                                        <i class="fa-thin fa-arrow-up-right-from-square"></i>
                                     </div>
 
                                 </div>
@@ -329,24 +313,20 @@ function Status_feed() {
 
                     </div>
                 </div >
-
-                {/* <Routes>
-                    <Route path={item_info_header_status.id_page_user} element={item_info_header_status.routee} />
-                </Routes> */}
-                
-
             </>
         )
     })
+
     return (
         <>
-            {list_up_status_feed_user}
+
+            <div>{list_up_status_feed_user}</div>
             {/* <AnimatePresence
                 initial={false}
                 exitBeforeEnter={true}
                 onExitComplete={() => null}
             >
-                {modal_select && <Modal_select
+                {modal_select && <ModalStatus
                     modalOpen={modal_select}
                     handleClose={close}
                 />}
@@ -358,5 +338,5 @@ function Status_feed() {
 
 
 
-export default Status_feed;
+export default StatusFeed;
 

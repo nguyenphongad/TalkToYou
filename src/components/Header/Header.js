@@ -35,11 +35,11 @@ function Header() {
         return (
             <>
                 <div>
-                    Hi everybody, đây là một bản beta bởi mình ấp ủ nó suốt thời gian học đại học đến giờ,
-                    mình sẽ sáng tạo 1 cái giao diện mới cùng với kết hợp mp3
+                    Hi everybody, đây là một bản beta bởi mình ấp ủ nó suốt thời gian học 
+                    bắt đầu đại học đến giờ,mình sẽ sáng tạo 1 cái giao diện mới cùng với kết hợp mp3
                     để nó gọi là "sống động" một chút. Nó còn rất nhiều cái thiếu sót. <br></br>
                     Mọi người nhận xét và cho em xin lời góp ý ạ. Em cảm ơn rất nhiều!<br></br>
-                    <div style={{ 'float': 'right' }}>NV Phong</div>
+                    <div style={{ 'float': 'right' }}>Nguyễn Văn Phong</div>
                 </div>
             </>
         );
@@ -67,6 +67,27 @@ function Header() {
 
 
     }
+
+    const list_history_search =[
+        "Nguyễn Đình Thiên",
+        "#xuhuong",
+        "Người tôi yêu là ai?"
+    ]
+    const list_History = list_history_search.map((index)=>{
+        return (
+            <div className="item_content_before--search" key={index}>
+                <i className="fa-light fa-clock-rotate-left"></i>
+                    <span className="name_history">
+                        {index} 
+                    </span>
+                    
+                <div className="icon_delete__history">
+                    <i className="fa-regular fa-xmark"></i> 
+                </div>
+            
+            </div>
+        )
+    })
 
     return (
         <>
@@ -99,7 +120,7 @@ function Header() {
                         </AnimatePresence>
                     </div>
                     <div className="item__header-wrap wrap__item--navMenu">
-                        <div className={`body__container--navMenu ${openDropDownSearch ? 'an-navMenu-drops-search-true' : 'an-navMenu-drops-search-false'}`}>
+                        <div className={`body__container--navMenu ${openDropDownSearch ? 'an-navMenu-drops-search-true' : ' an-navMenu-drops-search-false'}`}>
                             <CustomLink to="/feed" >
                                 <i className="fa-light fa-house-chimney"></i>
                                 <div className="item__text--status"> Home</div>
@@ -193,18 +214,7 @@ function Header() {
                 </div>
                 <div className="box__suggest--search">
                     <div className="text_warning">Try searching for</div>
-                    <div className="item_content_before--search">
-                        <i className="fa-light fa-clock-rotate-left"></i>
-                        Nguyễn Đình Thiên
-                    </div>
-                    <div className="item_content_before--search">
-                        <i className="fa-light fa-clock-rotate-left"></i>
-                        #xuhuong
-                    </div>
-                    <div className="item_content_before--search">
-                        <i className="fa-light fa-clock-rotate-left"></i>
-                        đáp án momo sự kiện
-                    </div>
+                    {list_History}
                 </div>
             </div>
         </>

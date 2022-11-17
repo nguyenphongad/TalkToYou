@@ -1,15 +1,15 @@
 import React from 'react';
 import { useState } from 'react';
-import Avatar_TTY from "../../../assets/images/photo_status_TTY/avatar_TTY.png";
+import Avatar_TTY from "../../../../assets/images/photo_status_TTY/avatar_TTY.png";
 
 import { motion, AnimatePresence } from "framer-motion";
 import Typical from 'react-typical';
 
-import ModalMation from '../../Modal/ModalMation/ModalMation';
+import ModalMation from '../../../Modal/ModalMation/ModalMation';
 import ContentCreateModal from './ContentCreateModal';
 
 import { withErrorBoundary } from "react-error-boundary";
-import ErrorComponent from '../../../Errors/ErrorBoundary';
+import ErrorComponent from '../../../../Errors/ErrorBoundary';
 
 function CreateStatus() {
 
@@ -43,7 +43,7 @@ function CreateStatus() {
                                 wrapper="div"
                                 className="text_think_create"
                                 steps={[
-                                    "Talk To You ơi, what are you thinking?", 2000,
+                                    "Talk To You, what are you thinking?", 2000,
                                 ]}
                             />
                         </div>

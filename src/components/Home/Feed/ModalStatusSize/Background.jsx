@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import "../../../styles/Modal/_styleModal.scss"
+import "../../../../styles/Modal/styleModalStatus/_styleModalStatus.scss";
 
-const Backdrop = ({ children, onClick }) => {
+const BackGround = ({ children, onClick }) => {
 
     return (
         <motion.div
             onClick={onClick}
-            className="backdrop"
+            className="backgrouns_status-size"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -17,4 +17,4 @@ const Backdrop = ({ children, onClick }) => {
     );
 };
 
-export default Backdrop;
+export default BackGround;

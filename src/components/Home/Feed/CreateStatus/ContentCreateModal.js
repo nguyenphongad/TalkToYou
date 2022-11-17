@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import Avatar_TTY from '../../../assets/images/photo_status_TTY/avatar_TTY.png';
+import Avatar_TTY from '../../../../assets/images/photo_status_TTY/avatar_TTY.png';
 
 function ContentCreateModal() {
 

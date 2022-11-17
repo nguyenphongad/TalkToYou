@@ -1,4 +1,5 @@
 import React from 'react'
+import Status_feed from '../../Home/Feed/StatusFeed';
 import AppInteractive from '../../Interactive/AppInteractive';
 
 function Watching() {
@@ -47,8 +48,8 @@ function Watching() {
                 Watching<br />
                 Watching<br />
                 Watching<br />
+                <AppInteractive/>
             </div>
-            <AppInteractive/>
         </>
     )
 }

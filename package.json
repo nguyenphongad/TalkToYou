@@ -1,6 +1,7 @@
 {
   "name": "talk-to-you",
   "version": "0.1.0",
+  "homepage": "/TalkToYou",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

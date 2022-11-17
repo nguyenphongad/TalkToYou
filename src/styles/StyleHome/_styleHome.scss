@@ -13,10 +13,10 @@
         }
         .wrap__newFeed {
             flex: 5;
-            padding: 0px 20px;
+            padding: 0px 25px;
             .box__status {
                 width: 100%;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
                 margin-top: 10px;
                 .body__create--status {
                     width: 100%;
@@ -28,7 +28,7 @@
                     flex-direction: row;
                     border: 1px solid $main_color-border;
                     .item__row-nav {
-                        margin:2px 5px;
+                        margin:2px 5px; 
                     }
                     .btn__avatar--user {
                         .border__avatar--user {
@@ -161,7 +161,7 @@
                                                 }
                                                 i {
                                                     color: #4d4dd3;
-                                                    font-size: 15px;
+                                                    font-size: 14px;
                                                 }
                                             }
                                         }

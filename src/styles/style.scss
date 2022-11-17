@@ -1,3 +1,4 @@
+
 @import "./+styleMain.scss";
 @mixin styleBackgroundLoading {
     width: 100%;
@@ -18,8 +19,8 @@ body {
     margin: 0px;
     position: relative;
     top: 0px;
-    .App {
         background: $main_color-bgr;
+    .App {
         .App_header {
             width: 100%;
             position: fixed;
@@ -28,7 +29,7 @@ body {
         }
         .App_body {
             width: 100%;
-            padding: 80px 70px 0px 70px;
+            padding: 80px 20px 0px 20px;
         }
     }
 }
@@ -37,7 +38,9 @@ body {
 @import "./StyleHome/styleHomeViewTask";
 @import "./StyleHome/styleHomeComplementary";
 
+@import "./Pages/stylePages";
 
+@import "./Interactive/styleIteractive";
 
 .body_loading_start {
     @include styleBackgroundLoading();
