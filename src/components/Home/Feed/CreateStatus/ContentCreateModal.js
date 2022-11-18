@@ -8,12 +8,44 @@ function ContentCreateModal() {
     useEffect(() => {
         searchInput.current.focus()
     }, []);
-
+    const listSelectCreatePost = [
+        {
+            classIcon: "fa-regular fa-file-invoice",
+            textBtn: "Add a document"
+        },
+        {
+            classIcon: "fa-regular fa-folder-image",
+            textBtn: "Add a photo"
+        },
+        {
+            classIcon: "fa-solid fa-camcorder",
+            textBtn: "Add a video"
+        },
+        {
+            classIcon: "fa-solid fa-face-smile",
+            textBtn: "Add a emotion"
+        },
+        {
+            classIcon: "fa-solid fa-location-dot",
+            textBtn: "Add a location"
+        },
+        {
+            classIcon: "fa-solid fa-calendar",
+            textBtn: "Add a event"
+        },
+    ]
+    const listRenderSeclectCreatePost = listSelectCreatePost.map((index) => {
+        return (
+            <div className="border__select-createPost" key={index} title={index.textBtn}>
+                <i className={index.classIcon}></i>
+            </div>
+        )
+    })
     return (
         <div className="box__create--status">
             <div className="container__create--dropdown-status">
-                <div className="item__flex--create--status box__first--content">
-                    <div className="item__flex__create-status flex__information__user">
+                <div className="box__first--content">
+                    <div className="flex__information__user">
                         <div className=" avatar_user">
                             <div className="align_item_center">
                                 <div className="border__img--avatar-user">
@@ -29,54 +61,36 @@ function ContentCreateModal() {
                             <div className="item__column_option share__change-button">
                                 <div className="btn__change--share">
                                     <i class="fa-solid fa-earth-americas"></i>
-                                    <span>Công khai</span>
+                                    <span>Public</span>
                                     <i class="fa-solid fa-caret-right"></i>
                                 </div>
                             </div>
                         </div>
                         <div></div>
                     </div>
-                    <div className="item__flex__create-status editor__content--status">
+                    <div className="editor__content--status">
                         <div>
                             <textarea placeholder="What do you think?"
                                 ref={searchInput} />
                         </div>
                     </div>
                 </div>
-                <div className="item__flex--create--status box__second--select-option">
-                    <div className="box_select_column--btn">
-                        <div>
-                            <i class="fa-regular fa-folder-image"></i>
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-camcorder"></i>
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-face-smile"></i>
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <div>
-                            <i class="fa-duotone fa-graduation-cap"></i>
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-list-music"></i>
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-calendar"></i>
-                        </div>
+                <div className="text_warning">
+                    <span>
+                        You can't post at this time !
+                    </span>
+                </div>
+                <div className="box__second--select-option">
+                    <div className="item_flex-row box_select_column--btn">
+                        {listRenderSeclectCreatePost}
+                    </div>
+                    <div className="item_flex-row box__btn-artdeco">
+                        <button className="artdeco-button artdeco-button-disable">Post</button>
                     </div>
 
                 </div>
-            </div>
-            <div className="text_warning">
-                <span>
-                    Chưa thể đăng bài viết trong lúc này
-                </span>
-            </div>
-            <button className="artdeco-button" >Đăng</button>
 
+            </div>
         </div>
     )
 }

@@ -1,15 +1,6 @@
 
 @import "./+styleMain.scss";
-@mixin styleBackgroundLoading {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    background-color: #fff3fb;
-    z-index: 999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 * {
     font-family: -apple-system, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -35,6 +26,7 @@ body {
 }
 @import "./styleHeader.scss";
 @import "./StyleHome/styleHome.scss";
+
 @import "./StyleHome/styleHomeViewTask";
 @import "./StyleHome/styleHomeComplementary";
 
@@ -125,5 +117,6 @@ body {
                 }
             }
         }
+        
     }
 }

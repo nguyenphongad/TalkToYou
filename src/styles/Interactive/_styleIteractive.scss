@@ -1,11 +1,9 @@
 .wrap__interactive {
     width: 100%;
     height: 60px;
-    background-color: $main_color-white;
     position: sticky;
     bottom: 15px;
-    border: 1px solid $main_color-border;
-    border-radius: 12px;
+    @include style_border-bgr();
     .body__interactive--row {
         width: 100%;
         height: 100%;

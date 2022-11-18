@@ -82,6 +82,7 @@
                 width: 100%;height: 100%;
                 font-size: 23px;
                 display: flex;
+                justify-content: center;
                 margin: 0px auto;
                 padding-bottom:5px ;
                 .menu__column--nav {
@@ -113,7 +114,7 @@
                                 // transition: all 0.4s;
                             }
                             .item__text--status {
-                                margin: 5px 0px 4px 0px;
+                                margin: 5px 0px 5px 0px;
                                 font-size: 13px;
                                 user-select: none;
                                 transition: all 0.5s;
@@ -130,10 +131,9 @@
                     i {
                         color: $main_color;
                         font-weight: 600;
-                        margin-bottom: 7px;
                         font-size: 29px;
-                        // transition: all 0.3s;
-                        transform: translateY(12px);
+                        transition: all 0.3s;
+                        transform: translateY(10px);
                         animation: an_icon_menu_header 0.3s;
                     }
                     @keyframes an_icon_menu_header {
@@ -145,7 +145,6 @@
                         }
                     }
                     .item__text--status {
-                        // display: none;
                         animation: an_text--status 0.4s forwards;
                         @keyframes an_text--status {
                             form{
@@ -258,7 +257,7 @@
                     border-radius: 100%;
                     transition: all 0.4s ;
                     border: 1px solid $main_color-border;
-                    box-shadow: #2b0a0a1f 1px 1px 4px 0px;
+                    // box-shadow: #2b0a0a1f 1px 1px 4px 0px;
                     i {
                         font-size: 18px;
                         color: $main_color-text;

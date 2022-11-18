@@ -50,7 +50,7 @@ function CreateStatus() {
                     </div>
                     <div className="item__row-nav btn__create--post" 
                     onClick={() => (modalOpen ? close() : open())}>
-                        <i class="fa-solid fa-plus"></i>
+                        <i className="fa-solid fa-plus"></i>
                         <div className="text__btn_create">Create&#160;Post</div>
                     </div>
 
@@ -61,7 +61,6 @@ function CreateStatus() {
                     exitBeforeEnter={true}
                     onExitComplete={() => null}
                 >
-
                     {modalOpen && <ModalMation
                         modalOpen={modalOpen}
                         handleClose={close}
@@ -71,7 +70,7 @@ function CreateStatus() {
 
                 </AnimatePresence>
             </div>
-            <div class="border--separation">
+            <div className="border--separation">
                 <div className="border-inline"></div>
             </div>
         </>

@@ -31,7 +31,7 @@ function Header() {
     }
 
 
-    function TextContentModalThink() {
+    const TextContentModalThink = () =>{
         return (
             <>
                 <div>
@@ -64,8 +64,6 @@ function Header() {
         if (openDropDownSearch) {
             setOpenDropDownSearch(false);
         }
-
-
     }
 
     const list_history_search =[

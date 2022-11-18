@@ -3,11 +3,11 @@ import React from 'react'
 function ViewTask() {
     return (
         <div className="viewTask">
-            <div>
+            <div className="box__view-account">
                 
             </div>
             <div style={{position:'sticky',top:'80px'}}>
-                ahahhhahah
+                menu
             </div>
         </div>
     )
