@@ -10,24 +10,22 @@ import Avatar_TTY from "../../assets/images/photo_status_TTY/avatar_TTY.png";
 
 import { AnimatePresence } from "framer-motion";
 import LoadingPage from "../../views/LoadingPage";
-
+import { Link } from "react-router-dom";
 
 function Header() {
     const [openDropDown, setOpenDropDown] = useState(false);
     const [openDropDownSearch, setOpenDropDownSearch] = useState(false);
     const [modalOpen_think, setModalOpen] = useState(false);
 
+    const docBody = document.body.style;
+    
     const openModal_think = () => {
         setModalOpen(true);
-        document.body.style.overflowY = "hidden";
-        document.body.style.paddingRight = "16px";
-        document.getElementById("hu").style.paddingRight = "16px";
+        docBody.overflowY = "hidden";
     }
     const closeModal_think = () => {
         setModalOpen(false);
-        document.body.style.removeProperty('overflow');
-        document.body.style.paddingRight = "0px";
-        document.getElementById("hu").style.paddingRight = "0px";
+        docBody.removeProperty('overflow');
     }
 
 
@@ -90,12 +88,12 @@ function Header() {
     return (
         <>
             <div className="header" >
-                <div className="header__wrap--row" id="hu">
+                <div className="header__wrap--row">
                     <div className="item__header-wrap wrap__item--box_first">
                         <div className="item_box_fisrt box__logo">
-                            <a href="#home">
+                            <Link to="/feed">
                                 <img src={Logo_TTY} alt="logo" />
-                            </a>
+                            </Link>
                         </div>
                         <div className="item_box_fisrt box__navication">
                             <div className="btn_checked_navication"
@@ -211,7 +209,7 @@ function Header() {
                 <div className="brg__drops--search" onClick={() => { setOpenDropDownSearch(false) }}>
                 </div>
                 <div className="box__suggest--search">
-                    <div className="text_warning">Try searching for</div>
+                    <div className="heading_sg">Try searching for</div>
                     {list_History}
                 </div>
             </div>

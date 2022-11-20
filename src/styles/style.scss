@@ -26,12 +26,9 @@ body {
 }
 @import "./styleHeader.scss";
 @import "./StyleHome/styleHome.scss";
-
 @import "./StyleHome/styleHomeViewTask";
 @import "./StyleHome/styleHomeComplementary";
-
 @import "./Pages/stylePages";
-
 @import "./Interactive/styleIteractive";
 
 .body_loading_start {
@@ -42,10 +39,8 @@ body {
         flex-direction: column;
         margin: 0px auto;
         .logo__loading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: an__logo__loading_trans 1s ease;
+            @include styleDisFlexCenter();
+            animation: an_logo_loading_trans 1s ease;
             img {
                 width: 60px;
                 max-height: 100%;
@@ -59,7 +54,7 @@ body {
                 color: #be0a88;
                 user-select: none;
             }
-            @keyframes an__logo__loading_trans {
+            @keyframes an_logo_loading_trans {
                 0% {
                     transform: scale(0.8);
                 }
@@ -73,8 +68,7 @@ body {
         }
         .animation__loading-border {
             width: 100%;
-            display: flex;
-            justify-content: center;
+            @include styleDisFlexCenter();
             margin-top: 10px;
             .border__loading--line {
                 width: 180px;

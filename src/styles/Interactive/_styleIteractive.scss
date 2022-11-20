@@ -3,7 +3,9 @@
     height: 60px;
     position: sticky;
     bottom: 15px;
-    @include style_border-bgr();
+    @include styleBorderBackground();
+    border-radius: 25px 25px 25px 25px;
+    transition: all 0.2s;
     .body__interactive--row {
         width: 100%;
         height: 100%;
@@ -11,21 +13,18 @@
         .item__control--inter {
             width: 100%;
             margin: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include styleDisFlexCenter();
             .border-style-btn {
                 width: 45px;
                 height: 45px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                @include styleDisFlexCenter();
                 border: 1px solid $main_color-border;
-                border-radius: 100%;
                 cursor: pointer;
                 transition: all 0.4s;
+                @include styleBoxBackGroundBlur();
                 background-color: $main_color-bgr;
-                &> i {
+                border-radius: 100%;
+                & > i {
                     font-size: 22px;
                     color: $main_color-text;
                 }
@@ -33,14 +32,78 @@
                     transform: translateY(-3px);
                 }
             }
-            &:last-child{
-                .border-style-btn{
-                    background-color: $main_color-text;
-                    &>i{
-                        color: $main_color-white;
-                    }
+            .isActiveBorder-btn {
+                background-color: $main_color-text;
+                transform: translateY(-3px);
+                i {
+                    color: $main_color-white;
                 }
             }
         }
+    }
+    .wrap_dropdown-interactive {
+        width: 115%;
+        height: 475px;
+        position: absolute;
+        bottom: 65px;
+        right: -2px;
+        display: flex;
+        @include styleBoxBackGroundBlur();
+        color: #822366;
+        font-weight: 500;
+    }
+    .wrap_drop-chat, .wrap_drop-noti {
+        width: 100%;
+        .body__messenger-drops ,.body__noti-drops{
+            padding: 5px 15px;
+            .tr_row {
+                display: flex;
+                border-bottom: 1px solid #eeddea;
+                padding-bottom: 10px;
+                .heading_tr--mess ,.heading_tr--chat{
+                    font-weight: 700;
+                    font-size: 26px;
+                }
+                .btn_select--set{
+                    width: 100%;
+                    @include styleDisFlexCenter();
+                    justify-content: right;
+                    .float_item{
+                        float: right;
+                        display: flex;
+                        .item_border_select--setMess,.item_border_select--setChat{
+                            width: 30px;height: 30px;
+                            @include styleDisFlexCenter();
+                            cursor: pointer;
+                            margin: 0px 5px;
+                            transition: all 0.4s;
+                            & > i{
+                                font-size: 20px;
+                            }
+                            &:hover{
+                                transform: translateY(-2px);
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    .wrap_drop-noti{
+        width: 100%;
+    }
+
+    .isShow {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        transition: 0.2s ease-out;
+    }
+    .isHide {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.95);
+        transition: 0.2s ease-out;
     }
 }

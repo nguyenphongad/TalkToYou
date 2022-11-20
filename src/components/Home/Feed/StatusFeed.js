@@ -10,22 +10,16 @@ import Photo_status_id_1_IU from "../../../assets/images/photo_status_IU/picture
 import Photo_status_id_1_ngoc from "../../../assets/images/photo_status_Ngoc/picture_status_ngoc_1.jpg";
 import Photo_status_id_1_quyen from "../../../assets/images/photo_status_quyen/picture_status_quyen_1.jpg";
 
-import { NavLink } from 'react-router-dom';
-
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
-import 'tippy.js/animations/scale-extreme.css';
-import "tippy.js/themes/material.css";
+import { Link } from 'react-router-dom';
 
 // import Modal_select from "../../../modal_select_status/modal_select";
 
-import { AnimatePresence } from "framer-motion";
-import Map from './Map';
+// import { AnimatePresence } from "framer-motion";
+// import Map from './Map';
 
-import BackGround from './ModalStatusSize/Background';
-import ModalStatus from './ModalStatusSize/ModalStatus';
-
-
+// import BackGround from './ModalStatusSize/Background';
+// import ModalStatus from './ModalStatusSize/ModalStatus';
+import RenderTippy from '../../Tippy/RenderTippy';
 
 function StatusFeed() {
     const up_header_status_user = [
@@ -78,10 +72,8 @@ function StatusFeed() {
             type_post: "Friends",
             date_create_status: 9 + " hour ago",
 
-
-            content: "ỏ, đi chơi cùng thằng bạn 🤣",
+            content: "Được dịp đi chơi cùng thằng bạn 🤣",
             image: Photo_status_id_1_ngoc,
-            // image: Video_1,
             view_comment: 5,
             view_like: 99,
             view_share: 4,
@@ -100,7 +92,6 @@ function StatusFeed() {
 
             content: "Gặp Hiếu PC phải xin kiểu ảnh chớ nhể (●'◡'●)",
             image: Photo_status_id_1_quyen,
-            // image: Video_1,
             view_comment: 333,
             view_like: 999,
             view_share: 206,
@@ -112,31 +103,20 @@ function StatusFeed() {
     const close = () => setModalOpen(false);
     const open = () => setModalOpen(true);
 
-    const list_up_status_feed_user = up_header_status_user.map((item_info_header_status, index) => {
+    const list_up_status_feed_user = up_header_status_user.map((item_info_header_status) => {
 
         function TypePost() {
             if (item_info_header_status.type_post === "Public") {
                 return (
-                    <Tippy
-                        content={item_info_header_status.type_post}
-                        animation="scale-extreme"
-                        delay={200}
-                        theme="material"
-                    >
+                    <RenderTippy contentTippy={item_info_header_status.type_post}>
                         <i className="fa-regular fa-earth-americas"></i>
-                    </Tippy>
+                    </RenderTippy>
                 )
-
             } else if (item_info_header_status.type_post === "Friends") {
                 return (
-                    <Tippy
-                        content={item_info_header_status.type_post}
-                        animation="scale-extreme"
-                        delay={200}
-                        theme="material"
-                    >
+                    <RenderTippy contentTippy={item_info_header_status.type_post}>
                         <i className="fa-regular fa-user-group"></i>
-                    </Tippy>
+                    </RenderTippy>
                 )
             }
         };
@@ -148,79 +128,64 @@ function StatusFeed() {
                         <div className="flex--column">
                             <div className="block__item--header block__avatar--user">
                                 <div className="border__avatar--user">
-                                    <NavLink to={"#/" + item_info_header_status.id_page_user} className="">
+                                    <Link to={"#/" + item_info_header_status.id_page_user} className="">
                                         <img src={item_info_header_status.image_avatar} loading="lazy" />
-                                    </NavLink>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="block__item--header block__content--picture">
                                 <div className="flex__box--inline">
                                     <div className="item__inline">
                                         <div className="name-user">
-                                            <NavLink to={"#/" + item_info_header_status.id_page_user}>
+                                            <Link to={"#/" + item_info_header_status.id_page_user}>
                                                 <span className="text__name--user hover_text_under">
                                                     {item_info_header_status.firt_name}&#160;{item_info_header_status.last_name}
                                                 </span>
                                                 {item_info_header_status.active_license ?
-                                                    <Tippy
-                                                        content="Trang cá nhân được xác thực bởi chủ thương hiệu"
-                                                        animation="scale-extreme"
-                                                        delay={200}
-                                                        theme="material"
-                                                    >
-                                                        {/* <i className="fa-solid fa-badge-check" ></i> */}
+                                                    <RenderTippy contentTippy="Trang cá nhân được xác thực bởi chủ thương hiệu">
                                                         <i className="fa-solid fa-octagon-check"></i>
-                                                    </Tippy>
-                                                    : ""}
-                                            </NavLink>
+                                                    </RenderTippy> : ""}
+                                            </Link>
                                         </div>
                                     </div>
                                     <div className="item__inline">
                                         <div className="id_user">
-                                            <NavLink to={"#/" + item_info_header_status.id_page_user}>
+                                            <Link to={"#/" + item_info_header_status.id_page_user}>
                                                 <span className="hover_text_under">
                                                     {item_info_header_status.id_user}
                                                 </span>
-                                            </NavLink>
+                                            </Link>
                                             <i className="fa-regular fa-period"></i>
                                             <div className="icon_tag">
-                                                <Tippy
-                                                    content="Feeds"
-                                                    animation="scale-extreme"
-                                                    delay={200}
-                                                    theme="material"
-                                                >
+                                                <RenderTippy contentTippy="Feeds">
                                                     <span className="hover_text_under">
                                                         <i className="fa-solid fa-square-rss"></i>
                                                     </span>
-                                                </Tippy>
+                                                </RenderTippy>
                                             </div>
 
                                             <i className="fa-regular fa-period"></i>
+
                                             <div className="icon_type">
                                                 <TypePost />
                                             </div>
+
                                             <i className="fa-regular fa-period"></i>
 
-                                            <NavLink to="#link_status">
-                                                <Tippy
-                                                    content={item_info_header_status.date_create_status}
-                                                    animation="scale-extreme"
-                                                    delay={200}
-                                                    theme="material"
-                                                >
+                                            <Link to="#link_status">
+                                                <RenderTippy contentTippy={item_info_header_status.date_create_status}>
                                                     <span className="hover_text_under">
                                                         {item_info_header_status.date_create_status}
                                                     </span>
-                                                </Tippy>
-                                            </NavLink>
+                                                </RenderTippy>
+                                            </Link>
 
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="flex__btn--more"
-                                    onClick={() => (modal_select ? close() : open())}
+                                    // onClick={() => (modal_select ? close() : open())}
                                 >
                                     <i className="fa-thin fa-arrow-up-right-from-square"></i>
                                 </div>
@@ -235,60 +200,37 @@ function StatusFeed() {
                     </div>
 
                     <div className="item__column--status body__status">
-                        <NavLink to="#status_size" className="border__status">
-                            {/* <video  controls>
-                                    <source src={item_info_header_status.image} ></source>
-                                    </video> */}
+                        <Link to="#status_size" className="border__status">
                             <img src={item_info_header_status.image} loading="lazy" />
-
-                        </NavLink>
+                        </Link>
                     </div>
 
                     <div className="item__column control feed__actions__status">
                         <div className="body__actions_status">
                             <div className="item__actions_feed view__actions ">
                                 <div className="item_btn_feed--view ">
-                                    <Tippy
-                                        content={item_info_header_status.view_comment + " comments"}
-                                        animation="scale-extreme"
-                                        delay={200}
-                                        theme="material"
-                                    >
-
+                                    <RenderTippy contentTippy={item_info_header_status.view_comment + " comments"}>
                                         <span className="hover_text_under">
                                             {item_info_header_status.view_comment} comments
                                         </span>
-
-                                    </Tippy>
+                                    </RenderTippy>
                                 </div>
-
-
                                 <div className="item_btn_feed--view">
-                                    <Tippy
-                                        content={item_info_header_status.view_like + " likes"}
-                                        animation="scale-extreme"
-                                        delay={200}
-                                        theme="material"
-                                    >
+                                    <RenderTippy contentTippy={item_info_header_status.view_like + " likes"}>
                                         <span className="hover_text_under">
-                                            {item_info_header_status.view_like} like
+                                            {item_info_header_status.view_like} likes
                                         </span>
+                                    </RenderTippy>
 
-                                    </Tippy>
                                 </div>
                                 <div className="item_btn_feed--view">
-                                    <Tippy
-                                        content={item_info_header_status.view_share + " shares"}
-                                        animation="scale-extreme"
-                                        delay={200}
-                                        theme="material"
-                                    >
-
+                                    <RenderTippy contentTippy={item_info_header_status.view_share + " shares"}>
                                         <span className="hover_text_under">
                                             {item_info_header_status.view_share} shares
                                         </span>
-                                    </Tippy>
+                                    </RenderTippy>
                                 </div>
+
                             </div>
                             <div className="item__actions_feed feed__action--bar">
                                 <div className="item__btn--work-feed box__comment">
@@ -333,7 +275,6 @@ function StatusFeed() {
     )
 
 }
-
 
 
 export default StatusFeed;

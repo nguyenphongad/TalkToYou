@@ -1,6 +1,6 @@
 
 import Tippy from '@tippyjs/react';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
 import Avatar_id_1 from "../../../assets/images/photo_friend_request/photo_user_id_1.png";
@@ -34,6 +34,7 @@ function Complementary() {
         {
             id: 6,
             nameLink: " More",
+            icon_after : "fa-light fa-caret-down"
         },
         {
             id: 7,
@@ -53,14 +54,14 @@ function Complementary() {
         )
     });
     const listDemandRequest = [
-        {   
+        {
             id_user: 1,
             avatar_user: Avatar_id_1,
             name_user: "Đặng Quốc Chiến",
             time_request: "1 hour ago"
         },
-        {   
-            id_user :2,
+        {
+            id_user: 2,
             avatar_user: Avatar_id_2,
             name_user: "Nguyễn Hường",
             time_request: "2 weeks ago"
@@ -72,7 +73,7 @@ function Complementary() {
                 <div className="item__demand--inline">
                     <div className="border_img-avatar">
                         <Link to="#">
-                            <img src={index.avatar_user} loading="lazy"/>
+                            <img src={index.avatar_user} loading="lazy" />
                         </Link>
                     </div>
                 </div>
@@ -102,30 +103,31 @@ function Complementary() {
     })
 
     return (
-        <div className="complementary">
-            <div className="item_tr--comple body__request">
-                <div className="box_request--fr">
-                    <div className="heading_text--rq">
-                        Friend request
-                    </div>
-                    <div className="body_out-request">
-                        {listItemuUserReq}
-                        <div className="btn_show-allReq">
-                            <Link to="#" >View all</Link>
+        <>
+            <div className="complementary">
+                <div className="item_tr--comple body__request">
+                    <div className="box_request--fr">
+                        <div className="heading_text--rq">
+                            Friend request
+                        </div>
+                        <div className="body_out-request">
+                            {listItemuUserReq}
+                            <div className="btn_show-allReq">
+                                <Link to="#" >View all</Link>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="item_tr--comle body__sticky">
-                <div className="box__ads--slide">
-                    Advertisement
+                <div className="item_tr--comle body__sticky">
+                    <div className="box__ads--slide">
+                        Advertisement
+                    </div>
+                    <div className="box_select_completary">
+                        {listRenderInfo}
+                    </div>
                 </div>
-                <div className="box_select_completary">
-                    {listRenderInfo}
-                </div>
             </div>
-
-        </div>
+        </>
     )
 }
 

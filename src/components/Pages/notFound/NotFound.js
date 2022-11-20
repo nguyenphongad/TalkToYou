@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Logo_TTY from "../../../assets/images_logo/logo_talk-to-you_v2.png"
 
 function NotFound() {
@@ -7,9 +8,9 @@ function NotFound() {
             <div className="body__notFound">
                 <div className="header__line">
                     <div className="box__logo">
-                        <a href="#home">
+                        <Link to="/feed">
                             <img src={Logo_TTY} alt="logo" />
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div className="block__comlumn--notFound">
