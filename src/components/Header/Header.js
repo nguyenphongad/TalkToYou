@@ -189,7 +189,7 @@ function Header() {
                                             Shortcuts & Support
                                         </div>
                                         <div className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
-                                            <i className="fa-duotone fa-circle-info"></i>
+                                            <i class="fa-duotone fa-user-headset"></i>
                                             Help
                                         </div>
                                         <div style={{ fontWeight: '780' }} className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>

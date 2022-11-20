@@ -142,7 +142,7 @@ function StatusFeed() {
                                                     {item_info_header_status.firt_name}&#160;{item_info_header_status.last_name}
                                                 </span>
                                                 {item_info_header_status.active_license ?
-                                                    <RenderTippy contentTippy="Trang cá nhân được xác thực bởi chủ thương hiệu">
+                                                    <RenderTippy contentTippy="Profile page verified">
                                                         <i className="fa-solid fa-octagon-check"></i>
                                                     </RenderTippy> : ""}
                                             </Link>

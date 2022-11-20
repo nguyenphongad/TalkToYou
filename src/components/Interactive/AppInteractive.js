@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import RenderListMenuMore from './ListMenuMore/RenderListMenuMore';
 import RenderMessenger from './Messenger/RenderMessenger';
 import RenderNotification from './Notification/RenderNotification';
 
@@ -13,17 +14,15 @@ function ItemModalDrops(props) {
 function AppInteractive() {
     const [openModalDropChat, setOpenModalDropChat] = useState(false);
     const [openModalDropNoti, setOpenModalDropNoti] = useState(false);
+    const [openModalDropMenuMore, setOpenModalDropMenuMore] = useState(false);
 
-    const handelOpenDropChat = () => {
-        setOpenModalDropChat(!openModalDropChat);
+    const handleOpenDropChat = () => { setOpenModalDropChat(!openModalDropChat); }
+    const handleOpenDropNoti = () => { setOpenModalDropNoti(!openModalDropNoti); }
+    const handleOpenDropMenuMore = () => { setOpenModalDropMenuMore(!openModalDropMenuMore); }
 
-    }
-    const handelOpenDropNoti = () => {
-        setOpenModalDropNoti(!openModalDropNoti);
-
-    }
     let dropRefModalChat = useRef();
     let dropRefModalNoti = useRef();
+    let dropRefModalMenuMore = useRef();
 
     useEffect(() => {
         let handlerChat = (e) => {
@@ -42,6 +41,14 @@ function AppInteractive() {
         document.addEventListener("mousedown", handlerNoti);
         return () => document.removeEventListener("mousedown", handlerNoti);
     });
+    useEffect(() => {
+        let handlerMenuMore = (e) => {
+            if (!dropRefModalMenuMore.current.contains(e.target))
+                setOpenModalDropMenuMore(false);
+        }
+        document.addEventListener("mousedown", handlerMenuMore);
+        return () => document.removeEventListener("mousedown", handlerMenuMore);
+    });
 
     return (
         <div className="wrap__interactive">
@@ -53,8 +60,8 @@ function AppInteractive() {
                 </div>
                 <div className="item__control--inter" ref={dropRefModalChat}>
                     <div className={`border-style-btn ${openModalDropChat ? 'isActiveBorder-btn' : ''}`}
-                        onClick={handelOpenDropChat}>
-                        <i className="fa-solid fa-comment"></i>
+                        onClick={handleOpenDropChat}>
+                        <i class="fa-solid fa-comment-lines"></i>
                     </div>
 
                     <ItemModalDrops className={openModalDropChat ? 'isShow' : 'isHide'}>
@@ -63,7 +70,7 @@ function AppInteractive() {
                 </div>
                 <div className="item__control--inter" ref={dropRefModalNoti}>
                     <div className={`border-style-btn ${openModalDropNoti ? 'isActiveBorder-btn' : ''}`}
-                        onClick={handelOpenDropNoti}>
+                        onClick={handleOpenDropNoti}>
                         <i className="fa-solid fa-bell"></i>
                     </div>
 
@@ -71,10 +78,20 @@ function AppInteractive() {
                         <RenderNotification />
                     </ItemModalDrops>
                 </div>
-                <div className="item__control--inter">
-                    <div className="border-style-btn">
-                        <i className="fa-solid fa-plus"></i>
+                <div className="item__control--inter" ref={dropRefModalMenuMore}>
+                    <div className={`border-style-btn ${openModalDropMenuMore ? 'isActiveBorder-btn' : ''}`}
+                        onClick={handleOpenDropMenuMore}>
+                        <i 
+                        className={`fa-solid fa-plus ${openModalDropMenuMore ? 'rotateInIconDrop' : 'rotateUnIconDrop'}`}>
+
+                        </i>
                     </div>
+
+                    <ItemModalDrops 
+                    className={`setHeightAutoMenuMore ${openModalDropMenuMore  ? 'isShow' : 'isHide'}`}>
+                        <RenderListMenuMore/>
+                    </ItemModalDrops>
+
                 </div>
             </div>
 
