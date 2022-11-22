@@ -156,12 +156,14 @@
                                             a {
                                                 color: #822366;
                                                 text-decoration: none;
+                                                display: flex;
+                                                align-items: center;
                                                 .text__name--user {
                                                     margin-right: 8px;
                                                 }
                                                 i {
                                                     color: #4d4dd3;
-                                                    font-size: 14px;
+                                                    font-size: 12px;
                                                 }
                                             }
                                         }

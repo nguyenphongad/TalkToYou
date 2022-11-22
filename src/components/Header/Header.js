@@ -9,25 +9,32 @@ import ModalMation from "../Modal/ModalMation/ModalMation";
 import Avatar_TTY from "../../assets/images/photo_status_TTY/avatar_TTY.png";
 
 import { AnimatePresence } from "framer-motion";
-import LoadingPage from "../../views/LoadingPage";
 import { Link } from "react-router-dom";
+import UseKey from "../useKey/Usekey";
 
 function Header() {
     const [openDropDown, setOpenDropDown] = useState(false);
     const [openDropDownSearch, setOpenDropDownSearch] = useState(false);
-    const [modalOpen_think, setModalOpen] = useState(false);
-
-    const docBody = document.body.style;
+    const [openDropModalThink, setDropModalThink] = useState(false);
     
-    const openModal_think = () => {
-        setModalOpen(true);
-        docBody.overflowY = "hidden";
+    const openModal_think  = () => {
+        setDropModalThink(true);
+        document.body.style.overflowY = "hidden";
     }
     const closeModal_think = () => {
-        setModalOpen(false);
-        docBody.removeProperty('overflow');
+        setDropModalThink(false);
+        document.body.style.removeProperty('overflow');
     }
 
+    function handlecloseModaldropInter(){
+        if(openDropDown) setOpenDropDown(false);
+        if(openDropDownSearch) setOpenDropDownSearch(false);
+        if(openDropModalThink) {
+            setDropModalThink(false);
+            document.body.style.removeProperty('overflow');
+        }
+    }
+    UseKey("Escape",handlecloseModaldropInter);
 
     const TextContentModalThink = () =>{
         return (
@@ -97,7 +104,7 @@ function Header() {
                         </div>
                         <div className="item_box_fisrt box__navication">
                             <div className="btn_checked_navication"
-                                onClick={() => (modalOpen_think ? closeModal_think() : openModal_think())}>
+                                onClick={() => (openDropModalThink ? closeModal_think() : openModal_think())}>
                                 <div>Version</div>
                                 <i className="fa-duotone fa-circle-info"></i>
                             </div>
@@ -107,8 +114,8 @@ function Header() {
                             exitBeforeEnter={true}
                             onExitComplete={() => null}
                         >
-                            {modalOpen_think && <ModalMation
-                                modalOpen={modalOpen_think}
+                            {openDropModalThink && <ModalMation
+                                modalOpen={openDropModalThink}
                                 handleClose={closeModal_think}
                                 text_header="Talk To You V2"
                                 content_modal={<TextContentModalThink />}
@@ -208,9 +215,11 @@ function Header() {
             <div className={`wrap__drops-suggest--search ${openDropDownSearch ? 'display-block-drops-search' : 'display-none-drops-search'}`}>
                 <div className="brg__drops--search" onClick={() => { setOpenDropDownSearch(false) }}>
                 </div>
-                <div className="box__suggest--search">
-                    <div className="heading_sg">Try searching for</div>
-                    {list_History}
+                <div className="wrap_box_suggest--search">
+                    <div className="box__suggest--search">
+                        <div className="heading_sg">Try searching for</div>
+                        {list_History}
+                    </div>
                 </div>
             </div>
         </>

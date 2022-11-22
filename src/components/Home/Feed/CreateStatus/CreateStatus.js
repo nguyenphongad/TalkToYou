@@ -10,18 +10,26 @@ import ContentCreateModal from './ContentCreateModal';
 
 import { withErrorBoundary } from "react-error-boundary";
 import ErrorComponent from '../../../../Errors/ErrorBoundary';
+import UseKey from '../../../useKey/Usekey';
 
 function CreateStatus() {
 
-    const [modalOpen, setModalOpen] = useState(false);
+    const [openDropModalCreatePost, setopenDropModalCreatePost] = useState(false);
     const open = () => {
-        setModalOpen(true);
+        setopenDropModalCreatePost(true);
         document.body.style.overflowY = "hidden";
     }
     const close = () => {
-        setModalOpen(false);
+        setopenDropModalCreatePost(false);
         document.body.style.removeProperty('overflow');
     }
+    function handlecloseModaldropInter(){
+        if(openDropModalCreatePost) {
+            setopenDropModalCreatePost(false);
+            document.body.style.removeProperty('overflow');
+        }
+    }
+    UseKey("Escape",handlecloseModaldropInter);
 
     return (
         <>
@@ -33,7 +41,7 @@ function CreateStatus() {
                         </div>
                     </div>
                     <div className="item__row-nav create__text--think"
-                        onClick={() => (modalOpen ? close() : open())}>
+                        onClick={() => (openDropModalCreatePost ? close() : open())}>
                         <div className="btn__input--content" id="id_context">
                             <Typical
                                 wrapper="div"
@@ -45,7 +53,7 @@ function CreateStatus() {
                         </div>
                     </div>
                     <div className="item__row-nav btn__create--post" 
-                        onClick={() => (modalOpen ? close() : open())}>
+                        onClick={() => (openDropModalCreatePost ? close() : open())}>
                         <i className="fa-solid fa-plus"></i>
                         <div className="text__btn_create">Create Post</div>
                     </div>
@@ -56,8 +64,8 @@ function CreateStatus() {
                     exitBeforeEnter={true}
                     onExitComplete={() => null}
                 >
-                    {modalOpen && <ModalMation
-                        modalOpen={modalOpen}
+                    {openDropModalCreatePost && <ModalMation
+                        modalOpen={openDropModalCreatePost}
                         handleClose={close}
                         text_header="Create a post"
                         content_modal={<ContentCreateModal />}

@@ -4,16 +4,18 @@
     height: 60px;
     position: sticky;
     bottom: 15px;
-    @include styleBorderBackground();
-    border-radius: 25px 25px 25px 25px;
-    transition: all 0.2s;
     .body__interactive--row {
         width: 100%;
         height: 100%;
         display: flex;
+        @include styleBorderBackground();
+        border-radius: 30px;
+        transition: all 0.2s;
+        position: relative;
+        z-index: 13;
         .item__control--inter {
             width: 100%;
-            margin: 5px;
+            margin:5px 3px;
             @include styleDisFlexCenter();
             .border-style-btn {
                 width: 45px;
@@ -139,14 +141,21 @@
             }
         }
     }
-
+    .wrap-drop-stories{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top:0px;left: 0px;
+        background-color: #000000c2;
+        z-index: 9;
+    }
 
     .setHeightAutoMenuMore{
         width: 102%;
         height: auto;
         .body_drop--menuMore{
             width: 100%;
-            padding: 15px;
+            padding:5px 15px;
             .heading_menuMore{
                 font-size: 26px;
                 font-weight: 700;
@@ -160,7 +169,7 @@
                     padding: 10px 15px;
                     @include styleDisFlexCenter();
                     display: inline-flex;
-                    margin: 6px;
+                    margin:8px 4px;
                     cursor: pointer;
                     transition: all 0.4s;
                     border-radius: 20px;

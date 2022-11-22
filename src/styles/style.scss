@@ -14,13 +14,13 @@ body {
     .App {
         .App_header {
             width: 100%;
-            position: fixed;
+            // position: fixed;
             top: 0px;
-            z-index: 99;
+            // z-index: 0;
         }
         .App_body {
             width: 100%;
-            padding: 80px 20px 0px 20px;
+            padding: 70px 20px 0px 20px;
         }
     }
 }

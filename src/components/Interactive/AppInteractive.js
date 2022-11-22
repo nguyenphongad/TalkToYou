@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
+import UseKey from '../useKey/Usekey';
 import RenderListMenuMore from './ListMenuMore/RenderListMenuMore';
 import RenderMessenger from './Messenger/RenderMessenger';
 import RenderNotification from './Notification/RenderNotification';
+
 
 function ItemModalDrops(props) {
     return (
@@ -12,6 +14,7 @@ function ItemModalDrops(props) {
 }
 
 function AppInteractive() {
+
     const [openModalDropChat, setOpenModalDropChat] = useState(false);
     const [openModalDropNoti, setOpenModalDropNoti] = useState(false);
     const [openModalDropMenuMore, setOpenModalDropMenuMore] = useState(false);
@@ -50,6 +53,13 @@ function AppInteractive() {
         return () => document.removeEventListener("mousedown", handlerMenuMore);
     });
 
+    function handlecloseModaldropInter() {
+        if (openModalDropChat) setOpenModalDropChat(false);
+        if (openModalDropNoti) setOpenModalDropNoti(false);
+        if (openModalDropMenuMore) setOpenModalDropMenuMore(false);
+    }
+    UseKey("Escape", handlecloseModaldropInter);
+
     return (
         <div className="wrap__interactive">
             <div className="body__interactive--row">
@@ -57,6 +67,9 @@ function AppInteractive() {
                     <div className="border-style-btn">
                         <i className="fa-solid fa-elevator"></i>
                     </div>
+
+
+
                 </div>
                 <div className="item__control--inter" ref={dropRefModalChat}>
                     <div className={`border-style-btn ${openModalDropChat ? 'isActiveBorder-btn' : ''}`}
@@ -81,21 +94,25 @@ function AppInteractive() {
                 <div className="item__control--inter" ref={dropRefModalMenuMore}>
                     <div className={`border-style-btn ${openModalDropMenuMore ? 'isActiveBorder-btn' : ''}`}
                         onClick={handleOpenDropMenuMore}>
-                        <i 
-                        className={`fa-solid fa-plus ${openModalDropMenuMore ? 'rotateInIconDrop' : 'rotateUnIconDrop'}`}>
+                        <i
+                            className={`fa-solid fa-plus ${openModalDropMenuMore ? 'rotateInIconDrop' : 'rotateUnIconDrop'}`}>
 
                         </i>
                     </div>
 
-                    <ItemModalDrops 
-                    className={`setHeightAutoMenuMore ${openModalDropMenuMore  ? 'isShow' : 'isHide'}`}>
-                        <RenderListMenuMore/>
+                    <ItemModalDrops
+                        className={`setHeightAutoMenuMore ${openModalDropMenuMore ? 'isShow' : 'isHide'}`}>
+                        <RenderListMenuMore />
                     </ItemModalDrops>
 
                 </div>
             </div>
 
-
+            {/* <div className="wrap-drop-stories">
+                <div>
+                    nọi dung drop-stories
+                </div>
+            </div> */}
         </div>
     )
 }

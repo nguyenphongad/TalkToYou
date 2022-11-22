@@ -9,13 +9,14 @@ const dropIn = {
     visible: {
         // y: "0",
         opacity: 1,
+        scale : 1,
         transition: {
             duration: 0.3,
             type: "spring",
-            damping: 40,
-            stiffness: 700,
+            damping: 50,
+            stiffness: 800,
         },
-        scale : 1,
+        
     },
     exit: {
         // y: "100vh",

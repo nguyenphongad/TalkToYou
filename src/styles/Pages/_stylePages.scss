@@ -6,15 +6,15 @@
     left: 0px;
     color: #822366;
     z-index: 99;
-    background-color:$main_color-bgr;
+    background-color: $main_color-bgr;
     .header__line {
         width: 100%;
         height: 60px;
         position: fixed;
         background-color: $main_color-white;
         padding: 0px 20px;
-        box-shadow:$main_box-shadow_header;
-        z-index:123 ;
+        box-shadow: $main_box-shadow_header;
+        z-index: 123;
         .box__logo {
             width: 100%;
             height: 100%;
@@ -25,7 +25,6 @@
                 transform: scale(0.86);
                 filter: drop-shadow(2px 2px 0px #916383);
             }
-            
         }
     }
     .block__comlumn--notFound {
@@ -33,7 +32,7 @@
         @include styleDisFlexCenter();
         flex-direction: column;
         overflow-y: scroll;
-        padding:0px 100px;
+        padding: 0px 100px;
         .item__notification--notFound {
             width: 100%;
             @include styleDisFlexCenter();
@@ -55,20 +54,26 @@
                 line-height: 25px;
                 text-align: center;
             }
-            .text__go-home {
-                padding:10px 15px;
-                margin-top: 20px;
-                border: 1px solid $main_color-border;
-                font-size: 19px;
-                font-weight: 500;
-                border-radius: 30px;
-                cursor: pointer;
-                transition: all 0.4s;
-                text-decoration: none;
-                color: #822366;
-            }
-            .text__go-home:hover {
-                transform: translateY(-4px);
+            .flex_btn {
+                display: flex;
+                .text__btn-history {
+                    padding: 10px 15px;
+                    margin: 15px;
+                    border: 1px solid $main_color-border;
+                    font-size: 19px;
+                    font-weight: 500;
+                    border-radius: 30px;
+                    cursor: pointer;
+                    transition: all 0.4s;
+                    text-decoration: none;
+                    color: #822366;
+                    &:hover {
+                        transform: translateY(-4px);
+                    }
+                }
+                .st_btn_go{
+                    background-color: $main_color-white-hover
+                }
             }
         }
     }

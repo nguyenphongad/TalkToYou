@@ -1,8 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Logo_TTY from "../../../assets/images_logo/logo_talk-to-you_v2.png"
 
 function NotFound() {
+
+    let history = useNavigate();
+
     return (
         <>
             <div className="body__notFound">
@@ -24,9 +27,14 @@ function NotFound() {
                         </div>
                     </div>
                     <div className="item__notification--notFound">
-                        <a href="/feed" className="text__go-home">
-                            <span> Go to your feed</span>
-                        </a>
+                        <div className="flex_btn">
+                            <div onClick={() => history(-1)} className="text__btn-history">
+                                <span> Go back </span>
+                            </div>
+                            <div onClick={()=>history("/feed")} className="text__btn-history st_btn_go">
+                                <span> Go to your feed</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

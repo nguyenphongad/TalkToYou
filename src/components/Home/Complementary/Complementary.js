@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import Avatar_id_1 from "../../../assets/images/photo_friend_request/photo_user_id_1.png";
 import Avatar_id_2 from "../../../assets/images/photo_friend_request/photo_user_id_2.png";
 
+import Gif_ads from "../../../assets/gif_ads/gif-ads_drinks.gif";
+
 function Complementary() {
 
     const listInfotificationComple = [
@@ -34,7 +36,7 @@ function Complementary() {
         {
             id: 6,
             nameLink: " More",
-            icon_after : "fa-light fa-caret-down"
+            icon_after: "fa-light fa-caret-down"
         },
         {
             id: 7,
@@ -101,7 +103,6 @@ function Complementary() {
             </div>
         )
     })
-
     return (
         <>
             <div className="complementary">
@@ -120,7 +121,16 @@ function Complementary() {
                 </div>
                 <div className="item_tr--comle body__sticky">
                     <div className="box__ads--slide">
-                        Advertisement
+                        {/* Advertisement */}
+                        <img src={Gif_ads} alt="ads"/>
+                        <div className="btn_ads_noti-sion">
+                            <div class="text_ads_animate" id="id_ads">Advertisement </div>
+                            <div>
+                                <i class="fa-duotone fa-circle-info"></i>
+                            </div>
+                            
+                            
+                        </div>
                     </div>
                     <div className="box_select_completary">
                         {listRenderInfo}
