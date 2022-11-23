@@ -6,7 +6,7 @@ import Logo_TTY from "../../assets/images_logo/logo_talk-to-you_v2.png";
 import CustomLink from "../../routes/customLink";
 import ModalMation from "../Modal/ModalMation/ModalMation";
 
-import Avatar_TTY from "../../assets/images/photo_status_TTY/avatar_TTY.png";
+import Avatar_TTY from "../../assets/images/photo_status_1/avatar_id-1.png";
 
 import { AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -132,17 +132,17 @@ function Header() {
                                 <i className="fa-light fa-clapperboard-play"></i>
                                 <div className="item__text--status"> Watching</div>
                             </CustomLink>
-                            <CustomLink to="/marketplace" >
-                                <i className="fa-light fa-cart-shopping-fast"></i>
-                                <div className="item__text--status">Marketplace</div>
-                            </CustomLink>
                             <CustomLink to="/music" >
                                 <i className="fa-light fa-folder-music"></i>
                                 <div className="item__text--status"> Music</div>
                             </CustomLink>
-                            <CustomLink to="/learning" >
-                                <i className="fa-light fa-graduation-cap"></i>
-                                <div className="item__text--status"> Learning</div>
+                            <CustomLink to="/marketplace" >
+                                <i className="fa-light fa-cart-shopping-fast"></i>
+                                <div className="item__text--status">Marketplace</div>
+                            </CustomLink>
+                            <CustomLink to="/typay" >
+                                <i class="fa-light fa-credit-card"></i>
+                                <div className="item__text--status"> TY Pay</div>
                             </CustomLink>
                         </div>
                         <div className={`box__dropdown--search ${openDropDownSearch ? 'active_Search' : 'inactive_Search'}`} >

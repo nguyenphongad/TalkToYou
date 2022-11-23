@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import Avatar_TTY from "../../../../assets/images/photo_status_TTY/avatar_TTY.png";
+import Avatar_TTY from "../../../../assets/images/photo_status_1/avatar_id-1.png";
 
 import { AnimatePresence } from "framer-motion";
 import Typical from 'react-typical';

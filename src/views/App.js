@@ -11,6 +11,7 @@ import { BrowserRouter } from 'react-router-dom';
 import ScrollToTop from './ScrollToTopRouter';
 import LoadingStart from './LoadingStart';
 import LoadingPage from './LoadingPage';
+import Map from '../components/Home/Feed/Map';
 
 function App() {
   const [post, setPost] = useState(null);
@@ -39,6 +40,7 @@ function App() {
         </BrowserRouter> :
           <LoadingPage />
       }
+      {/* <Map/> */}
     </>
   );
 

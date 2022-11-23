@@ -1,14 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import Avatar_1 from "../../../assets/images/photo_status_TTY/avatar_TTY.png";
-import Avatar_2 from "../../../assets/images/photo_status_IU/avatar_IU.jpg";
-import Avatar_3 from "../../../assets/images/photo_status_Ngoc/avatar_ngoc.jpg";
-import Avatar_4 from "../../../assets/images/photo_status_quyen/avatar_quyen.png";
+import Avatar_1 from "../../../assets/images/photo_status_1/avatar_id-1.png";
+import Avatar_2 from "../../../assets/images/photo_status_2/avatar_id-2.jpg";
+import Avatar_3 from "../../../assets/images/photo_status_3/avatar_id-3.jpg";
+import Avatar_4 from "../../../assets/images/photo_status_4/avatar_id-4.jpg";
+import Avatar_5 from "../../../assets/images/photo_status_5/avatar_id-5.png";
 
-import Photo_status_id_1_TTY from "../../../assets/images/photo_status_TTY/picture_status_TTY_1.jpg";
-import Photo_status_id_1_IU from "../../../assets/images/photo_status_IU/picture_status_IU_2.jpg";
-import Photo_status_id_1_ngoc from "../../../assets/images/photo_status_Ngoc/picture_status_ngoc_1.jpg";
-import Photo_status_id_1_quyen from "../../../assets/images/photo_status_quyen/picture_status_quyen_1.jpg";
+import Photo_status_id_1 from "../../../assets/images/photo_status_1/picture_status_id-1.jpg";
+import Photo_status_id_2 from "../../../assets/images/photo_status_2/picture_status_id-2.jpg";
+import Photo_status_id_3 from "../../../assets/images/photo_status_3/picture_status_id-3.jpg";
+import Photo_status_id_4 from "../../../assets/images/photo_status_4/picture_status_id-4.jpg";
+import Photo_status_id_5 from "../../../assets/images/photo_status_5/picture_status_id-5.jpg";
 
 import { Link } from 'react-router-dom';
 
@@ -36,7 +38,7 @@ function StatusFeed() {
             date_create_status: 1 + " day ago",
 
             content: "Wecome to TALK TO YOU 🤗 ",
-            image: Photo_status_id_1_TTY,
+            image: Photo_status_id_1,
             view_comment: 9.2 + "M",
             view_like: 30.3 + "M",
             view_share: 6 + "M",
@@ -54,7 +56,7 @@ function StatusFeed() {
             date_create_status: 2 + " hour ago",
 
             content: "지은 언니 바빠요?ㅜㅜ 너무 보고 싶어서🤣😂👍",
-            image: Photo_status_id_1_IU,
+            image: Photo_status_id_2,
             view_comment: 47.3 + "K",
             view_like: 5.5 + "M",
             view_share: 17.5 + "K",
@@ -72,29 +74,47 @@ function StatusFeed() {
             type_post: "Friends",
             date_create_status: 9 + " hour ago",
 
-            content: "Được dịp đi chơi cùng thằng bạn 🤣",
-            image: Photo_status_id_1_ngoc,
-            view_comment: 5,
-            view_like: 99,
-            view_share: 4,
+            content: "Nhìn mặt nó nghiêm túc dễ sợ 🤣",
+            image: Photo_status_id_3,
+            view_comment: 345,
+            view_like: 989,
+            view_share: 401,
         },
         {
             id: 4,
-            id_page_user: "tranvanquyen23",
+            id_page_user: "dangthiquyen23",
             image_avatar: Avatar_4,
-            firt_name: "Trần Văn",
-            last_name: "Quyến",
+            firt_name: "Đăng Thị",
+            last_name: "Quyên",
             active_license: false,
-            id_user: "@tranvanquyen23",
+            id_user: "@dtquyen23",
             active_type_status: "fa-solid fa-badge-check",
             type_post: "Friends",
             date_create_status: 9 + " munite ago",
 
-            content: "Gặp Hiếu PC phải xin kiểu ảnh chớ nhể (●'◡'●)",
-            image: Photo_status_id_1_quyen,
+            content: "shiba và cat nhà tôi thật dễ thương (●'◡'●)",
+            image: Photo_status_id_4,
             view_comment: 333,
             view_like: 999,
             view_share: 206,
+        },
+        {
+            id: 5,
+            id_page_user: "nguyenlieu",
+            image_avatar: Avatar_5,
+            firt_name: "Nguyễn",
+            last_name: "Liệu",
+            active_license: false,
+            id_user: "@nguyenlieu1999",
+            active_type_status: "fa-solid fa-badge-check",
+            type_post: "Friends",
+            date_create_status: 9 + " munite ago",
+
+            content: "omg, dễ thương quá (●'◡'●)",
+            image: Photo_status_id_5,
+            view_comment: 277,
+            view_like: 993,
+            view_share: 43,
         },
     ];
 

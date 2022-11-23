@@ -1,53 +1,34 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useState } from 'react';
 
 function Map() {
-    const list = [
-        {
-            id: 1,
-            nameF: "phong"
-        },
-        {
-            id: 2,
-            nameF: "hùng",
-        },
-        {
-            id: 3,
-            nameF: "đình"
-        }
-    ]
 
-    const [name, setName] = useState([]);
+    const [gift, setGift] = useState('');
+    const [gifts, setGifts] = useState([]);
 
-    console.log(name);
-
-    const handleCheck = (id) => {
-        setName(prev => {
-            const isCheck = name.includes(id);
-            if (isCheck) {
-                return name.filter(item => item !== id)
-            } else {
-                return [...prev, id]
-            }
-        })
+    const handleSubmit = () => {
+        setGifts(prev => [...prev, gift]);
+        setGift('');
     }
     return (
         <div>
-            {
-                list.map(index => (
-                    <div key={index.id}>
+            <input
+                value={gift}
+                onChange={e => setGift(e.target.value)}
+            />
+            <button onClick={handleSubmit}>
+                add
+            </button><br />
 
-                        <input
-                            type="checkbox"
-                            checked={name.includes(index.id)}
-                            onChange={() => handleCheck(index.id)}
-                        />
-                        {index.nameF}
-                    </div>
-                ))
-            }
+            <ul>
+                {
+                    gifts.map(( gift,index) => (<li key={index}> {gift} </li>))
+                }
+
+            </ul>
 
         </div>
     )
 }
 
-export default Map;
+export default Map
