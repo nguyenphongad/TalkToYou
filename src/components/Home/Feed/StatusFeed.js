@@ -84,7 +84,7 @@ function StatusFeed() {
             id: 4,
             id_page_user: "dangthiquyen23",
             image_avatar: Avatar_4,
-            firt_name: "Đăng Thị",
+            firt_name: "Đặng Thị",
             last_name: "Quyên",
             active_license: false,
             id_user: "@dtquyen23",

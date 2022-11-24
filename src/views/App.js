@@ -1,6 +1,8 @@
 import { React, useEffect, useState } from 'react';
 
 import '../styles/style.scss';
+import '../styles/styleResponsive.scss';
+
 import "../Fontawesome_v6/css/all.css";
 
 import Header from '../components/Header/Header';

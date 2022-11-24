@@ -54,6 +54,11 @@
                                 font-weight: 600;
                                 color: #b15e98;
                                 text-decoration: none;
+                                @media only screen and (max-width: 1310px) {
+                                    & {
+                                        font-size: 13px;
+                                    }
+                                }
                                 &:hover {
                                     text-decoration: underline;
                                 }

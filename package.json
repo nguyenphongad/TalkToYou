@@ -1,7 +1,7 @@
 {
+  "homepage": "https://nguyenphongad.github.io/TalkToYou",
   "name": "talk-to-you",
   "version": "0.1.0",
-  "homepage": "/TalkToYou",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -23,6 +23,8 @@
   },
   "scripts": {
     "start": "set port=2222 && react-scripts start",
+    "predeloy": "npm run build",
+    "deloy ": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -44,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }

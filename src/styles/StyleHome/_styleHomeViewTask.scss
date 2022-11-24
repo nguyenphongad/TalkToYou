@@ -20,12 +20,17 @@
             }
         }
         .body_view-acc {
-            padding: 10px;
-            margin-top: -40px;
+            // padding: 10px;
+            // margin-top: -45px;
             position: relative;
             z-index: 3;
             .info_view-acc {
                 display: flex;
+                margin: 10px;
+                padding: 10px;
+                border-radius: 12px;
+                transition: all 0.4s;
+                background-color: #fcf1f8;
                 .border_avt--img-view-acc {
                     width: 65px;
                     height: 64px;
@@ -42,12 +47,12 @@
                     .name-user{
                         font-size: 23px;
                         font-weight: 600;
-                        color: $main_color-white;
+                        color: $main_color-text;
                         @include styleDisFlexCenter();
                         > i{
                             font-size: 16px;
                             margin-left: 10px;
-                            color: #b0b0ee;
+                            color: #3e3ed6;
                         }
                     }
                     .name_id{
@@ -58,14 +63,22 @@
                 }
             }
             .content_bio{
-                padding:10px 15px 25px 15px;
+                padding:10px 15px 15px 15px;
                 color: $main_color;
                 text-align: center;
+            }
+            .shopping_cart_link{
+                text-align: center;
+                margin: 15px;
+                color: $main_color-text;
+                cursor: pointer;
+                transition: all 0.4s;
+                &:hover{transform: translateY(-4px);}
             }
             .size-tr-cardPay{
                 width: 100%;
                 border-top:1px solid $main_color-white-hover ;
-                padding: 10px;
+                padding:10px 15px;
                 color: $main_color-text;
                 span{
                     float: right;
@@ -87,6 +100,27 @@
         @include styleBorderBackground();
         .body_menuTask{
             padding: 10px;
+            .item__menu--task{
+                margin: 5px;
+                a{
+                    color: #975182;
+                    display: flex;
+                    padding: 7px 10px;
+                    text-decoration: none;
+                    font-size: 18px;
+                    font-weight: 600;
+                    border-radius: 12px;
+                    transition: all 0.4s;
+                    @include styleDisFlexCenter();
+                    justify-content: left;
+                    i{
+                        margin-right: 15px;
+                    }
+                    &:hover{
+                        background-color: $main_color-white-hover;
+                    }
+                }
+            }
         }
     }
 }

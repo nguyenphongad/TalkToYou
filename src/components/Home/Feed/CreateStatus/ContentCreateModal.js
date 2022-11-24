@@ -13,34 +13,41 @@ function ContentCreateModal() {
     const listSelectCreatePost = [
         {
             classIcon: "fa-regular fa-file-invoice",
-            textBtn: "Add a document"
+            textBtn: "Add a document",
+            colorIcon : "black"
         },
         {
             classIcon: "fa-regular fa-folder-image",
-            textBtn: "Add a photo"
+            textBtn: "Add a photo",
+            colorIcon : "#7474f5"
         },
         {
             classIcon: "fa-solid fa-camcorder",
-            textBtn: "Add a video"
+            textBtn: "Add a video",
+            colorIcon :"#f87b7b"
         },
         {
             classIcon: "fa-solid fa-face-smile",
-            textBtn: "Add a emotion"
+            textBtn: "Add a emotion",
+            colorIcon : "#d3af10"
         },
         {
             classIcon: "fa-solid fa-location-dot",
-            textBtn: "Add a location"
+            textBtn: "Add a location",
+            colorIcon : "#7d558c"
         },
         {
             classIcon: "fa-solid fa-calendar",
-            textBtn: "Add a event"
+            textBtn: "Add a event",
+            colorIcon : "#48b948"
         },
     ]
     const listRenderSeclectCreatePost = listSelectCreatePost.map((index) => {
+        const colorIcon = index.colorIcon;
         return (
             <RenderTippy contentTippy={index.textBtn} key={index}>
                 <div className="border__select-createPost" >
-                    <i className={index.classIcon}></i>
+                    <i className={index.classIcon} style={{color: colorIcon}}></i>
                 </div>
             </RenderTippy>
         )
