@@ -31,7 +31,7 @@ function NotFound() {
                             <div onClick={() => history(-1)} className="text__btn-history">
                                 <span> Go back </span>
                             </div>
-                            <div onClick={()=>history("/feed")} className="text__btn-history st_btn_go">
+                            <div onClick={()=>history("/")} className="text__btn-history st_btn_go">
                                 <span> Go to your feed</span>
                             </div>
                         </div>
