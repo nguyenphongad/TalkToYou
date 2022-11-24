@@ -12,7 +12,7 @@ function RoutesHeader() {
     return (
         <>
             <Routes>
-                <Route index path='/feed' element={<Home/>}></Route>
+                <Route index path='/' element={<Home/>}></Route>
                 <Route path='/watching' element={<Watching/>}></Route>
                 <Route path='/marketplace' element={<Marketplace/>}></Route>
                 <Route path='/music' element={<Music/>}></Route>
