@@ -124,7 +124,7 @@ function Header() {
                     </div>
                     <div className="item__header-wrap wrap__item--navMenu">
                         <div className={`body__container--navMenu ${openDropDownSearch ? 'an-navMenu-drops-search-true' : ' an-navMenu-drops-search-false'}`}>
-                            <CustomLink to="/" >
+                            <CustomLink to="/feed" >
                                 <i className="fa-light fa-house-chimney"></i>
                                 <div className="item__text--status"> Home</div>
                             </CustomLink>
