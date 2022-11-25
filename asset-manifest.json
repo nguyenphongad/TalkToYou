@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.a0eff26c.css",
-    "main.js": "./static/js/main.68ee94d8.js",
+    "main.css": "./static/css/main.e8fc26bd.css",
+    "main.js": "./static/js/main.8a44d22b.js",
     "static/media/gif-ads_drinks.gif": "./static/media/gif-ads_drinks.b8870d5ea1ea2fa6f0aa.gif",
     "static/media/picture_status_id-1.jpg": "./static/media/picture_status_id-1.6b789c604b28d01b0326.jpg",
     "static/media/fa-duotone-900.ttf": "./static/media/fa-duotone-900.7aaed8882e9e1b7d6613.ttf",
@@ -17,7 +17,6 @@
     "static/media/fa-solid-900.woff2": "./static/media/fa-solid-900.dd93dc2148412b8ed08a.woff2",
     "static/media/fa-brands-400.ttf": "./static/media/fa-brands-400.aa78803d79164416af03.ttf",
     "static/media/photo_user_id_2.png": "./static/media/photo_user_id_2.bff7df95818a8f5d589c.png",
-    "static/media/cover_bgr_home.jpg": "./static/media/cover_bgr_home.9fa86b177f9efe3ba81f.jpg",
     "static/media/picture_status_id-4.jpg": "./static/media/picture_status_id-4.d32228a6df85e85dd377.jpg",
     "static/media/fa-brands-400.woff2": "./static/media/fa-brands-400.7fe6c951dbf3b62b07e1.woff2",
     "static/media/avatar_id-3.jpg": "./static/media/avatar_id-3.4516733c255301bdc9d3.jpg",
@@ -30,11 +29,11 @@
     "static/media/fa-v4compatibility.ttf": "./static/media/fa-v4compatibility.a6c478646f0d356e9a05.ttf",
     "static/media/fa-v4compatibility.woff2": "./static/media/fa-v4compatibility.b76a469acd22a118b0b7.woff2",
     "index.html": "./index.html",
-    "main.a0eff26c.css.map": "./static/css/main.a0eff26c.css.map",
-    "main.68ee94d8.js.map": "./static/js/main.68ee94d8.js.map"
+    "main.e8fc26bd.css.map": "./static/css/main.e8fc26bd.css.map",
+    "main.8a44d22b.js.map": "./static/js/main.8a44d22b.js.map"
   },
   "entrypoints": [
-    "static/css/main.a0eff26c.css",
-    "static/js/main.68ee94d8.js"
+    "static/css/main.e8fc26bd.css",
+    "static/js/main.8a44d22b.js"
   ]
 }
