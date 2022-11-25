@@ -14,32 +14,32 @@ function ContentCreateModal() {
         {
             classIcon: "fa-regular fa-file-invoice",
             textBtn: "Add a document",
-            colorIcon : "black"
+            colorIcon : "#484444"
         },
         {
             classIcon: "fa-regular fa-folder-image",
             textBtn: "Add a photo",
-            colorIcon : "#7474f5"
+            colorIcon : "#313188"
         },
         {
             classIcon: "fa-solid fa-camcorder",
             textBtn: "Add a video",
-            colorIcon :"#f87b7b"
+            colorIcon :"#984646"
         },
         {
             classIcon: "fa-solid fa-face-smile",
             textBtn: "Add a emotion",
-            colorIcon : "#d3af10"
+            colorIcon : "#7d713d"
         },
         {
             classIcon: "fa-solid fa-location-dot",
             textBtn: "Add a location",
-            colorIcon : "#7d558c"
+            colorIcon : "#8e55a3"
         },
         {
             classIcon: "fa-solid fa-calendar",
             textBtn: "Add a event",
-            colorIcon : "#48b948"
+            colorIcon : "#458145"
         },
     ]
     const listRenderSeclectCreatePost = listSelectCreatePost.map((index) => {

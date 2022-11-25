@@ -1,6 +1,5 @@
 import React from 'react';
 import Avatar_1 from "../../../assets/images/photo_status_1/avatar_id-1.png";
-import CoverBgr_1 from "../../../assets/images/photo_cover_img/cover_bgr_home.jpg";
 import { Link } from 'react-router-dom';
 
 
@@ -8,9 +7,6 @@ function ViewTask() {
     return (
         <div className="viewTask">
             <div className="box__view-account">
-                {/* <div className="brg_cover-img">
-                    <img src={CoverBgr_1} />
-                </div> */}
                 <div className="body_view-acc">
                     <div className="info_view-acc">
                         <div className="border_avt--img-view-acc">

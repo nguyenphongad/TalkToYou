@@ -411,9 +411,10 @@
                     }
                 }
                 .text_warning {
-                    font-size: 15px;
+                    font-size: 17px;
                     color: #b43454;
                     margin: 10px 0px;
+                    font-weight: 600;
                 }
                 .box__second--select-option {
                     width: 100%;
@@ -460,8 +461,9 @@
                             user-select: none;
                         }
                         .artdeco-button-disable {
-                            pointer-events: none;
+                            // pointer-events: none;
                             background-color: #857981;
+                            cursor: no-drop;
                         }
                         .artdeco-button:hover {
                             transform: translateY(-4px);

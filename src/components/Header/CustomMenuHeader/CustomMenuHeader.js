@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { useState } from 'react';
 import { NavLink} from 'react-router-dom';
 
-function CustomLink() {
+function CustomMenuHeader() {
     const element = useRef();
 
     const listMenuHeader = [
@@ -84,4 +84,4 @@ function CustomLink() {
         </>
     )
 }
-export default CustomLink;
+export default CustomMenuHeader;

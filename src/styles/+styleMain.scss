@@ -5,12 +5,12 @@ $main_color-bgr: #fff7fc;
 $main_color-white: #ffffff;
 $main_color-white-hover: #f7e6f2;
 $main_color-white-hover-brgWhite: #f3ebf0;
-$main_color-border: #f7e2f1;
+$main_color-border: #eed5e7;
 $main_color-border-img: #cc8dba;
 $main_color-border-active: #ad6e9c;
 
 $main_box-shadow: #a38d9a8e 0px 0px 4px 1px;
-$main_box-shadow_header : 0 1px 1px 0 #a1438d1f, 0 1px 4px 0 #ce66b913, 0 1px 10px 0 #b82f9f0e;
+$main_box-shadow_header :2px 2px 4px 0 #a37c9b14, 2px 1px 2px 0px #ac5e9c2b, 2px 2px 15px 3px #611c540e;
 
 @mixin styleBorderBackground {
     border: 1px solid $main_color-border;

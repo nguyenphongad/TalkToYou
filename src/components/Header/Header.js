@@ -3,7 +3,7 @@ import { withErrorBoundary } from "react-error-boundary";
 
 import ErrorComponent from "../../Errors/ErrorBoundary";
 import Logo_TTY from "../../assets/images_logo/logo_talk-to-you_v2.png";
-import CustomLink from "../../routes/CustomLink";
+import CustomMenuHeader from "../Header/CustomMenuHeader/CustomMenuHeader";
 import ModalMation from "../Modal/ModalMation/ModalMation";
 
 import Avatar_TTY from "../../assets/images/photo_status_1/avatar_id-1.png";
@@ -123,7 +123,7 @@ function Header() {
                     </div>
                     <div className="item__header-wrap wrap__item--navMenu">
                         <div className={`body__container--navMenu ${openDropDownSearch ? 'an-navMenu-drops-search-true' : ' an-navMenu-drops-search-false'}`}>
-                            <CustomLink />
+                            <CustomMenuHeader />
                         </div>
                         <div className={`box__dropdown--search ${openDropDownSearch ? 'active_Search' : 'inactive_Search'}`} >
                             <div className="container__box--search" >
@@ -205,7 +205,6 @@ function Header() {
     )
 }
 
-<CustomLink></CustomLink>
 
 export default withErrorBoundary(Header, {
     FallbackComponent: ErrorComponent,

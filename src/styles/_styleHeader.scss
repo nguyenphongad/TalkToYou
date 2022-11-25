@@ -86,7 +86,7 @@
                 margin: 0px auto;
                 padding-bottom:5px ;
                 .menu__column--nav {
-                    width: 120px;
+                    width: 130px;
                     // margin-right: 0px;
                     margin: 0px 10px;
                     .item_header--item {
@@ -132,14 +132,15 @@
                         transition: all 0.3s;
                         transform: translateY(10px);
                         animation: an_icon_menu_header 0.3s;
-                    }
-                    @keyframes an_icon_menu_header {
-                        0% {
-                            font-size: 18px;
+                        @keyframes an_icon_menu_header {
+                            0% {
+                                font-size: 18px;
+                            }
+                            100% {
+                                font-size: 29px;
+                            }
                         }
-                        100% {
-                            font-size: 29px;
-                        }
+
                     }
                     .item__text--status {
                         animation: an_text--status 0.4s forwards;

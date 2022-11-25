@@ -17,7 +17,7 @@ function Home() {
                     <div className="item__wrap--home wrap__newFeed">
                         <CreateStatus/>
                         <StatusFeed/>
-                        <Map/> 
+                        {/* <Map/>  */}
 
                     </div>
                     <div className="item__wrap--home wrap__complementary">
