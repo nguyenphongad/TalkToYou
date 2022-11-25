@@ -47,7 +47,7 @@ function ViewTask() {
                         </Link>
                     </div>
                     <div className="item__menu--task">
-                        <Link to="#">
+                        <Link to="/friends">
                             <i class="fa-duotone fa-user-group"></i>
                             <div>Friends</div>
                         </Link>

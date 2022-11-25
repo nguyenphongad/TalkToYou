@@ -102,12 +102,10 @@
                             color: $main_color-text;
                             border-radius: 10px;
                             transition: all 0.4s;
-                            // padding:0px 20px;
                             i {
                                 font-size: 18px;
                                 margin-top: 5px;
                                 margin-bottom: 2px;
-                                // transition: all 0.4s;
                             }
                             .item__text--status {
                                 margin: 5px 0px 5px 0px;
@@ -120,6 +118,9 @@
                             }
                         }
                     }
+                }
+                .display-none{
+                    display: none;
                 }
                 .item_header--item a.active {
                     pointer-events: none;
@@ -157,29 +158,26 @@
                 .navigation_item--menu {
                     width: 70%;
                     height: 4px;
+                    display: block;
                     border-radius: 3px;
-                    padding-left: 20px;
-                    margin-right: 20px;
                     margin: 1px auto;
-                    animation: an_navigation_menu 0.4s alternate;
                     transition: all 0.4s;
-                }
-                @keyframes an_navigation_menu {
-                    0% {
-                        // transform: scaleX(0);
-                        transform: translateY(10px);
-                    }
-                    60% {
-                        // transform: scaleX(0.8);
-                        transform: translateY(0px);
-                    }
-                    100% {
-                        // transform: scaleX(0.7);
-                        transform: translateY(0px);
-                    }
+                    pointer-events: none;
                 }
                 .active_navigation {
                     background-color: $main_color;
+                    animation: an_navigation_menu 0.4s alternate;
+                    @keyframes an_navigation_menu {
+                        0% {
+                            transform: translateY(10px);
+                        }
+                        60% {
+                            transform: translateY(0px);
+                        }
+                        100% {
+                            transform: translateY(0px);
+                        }
+                    }
                 }
             }
             .box__dropdown--search {
@@ -438,4 +436,9 @@
 }
 .display-none-drops-search {
     display: none;
+}
+
+
+.nav-active{
+    color: red;
 }

@@ -3,21 +3,22 @@ import { withErrorBoundary } from "react-error-boundary";
 
 import ErrorComponent from "../../Errors/ErrorBoundary";
 import Logo_TTY from "../../assets/images_logo/logo_talk-to-you_v2.png";
-import CustomLink from "../../routes/customLink";
+import CustomLink from "../../routes/CustomLink";
 import ModalMation from "../Modal/ModalMation/ModalMation";
 
 import Avatar_TTY from "../../assets/images/photo_status_1/avatar_id-1.png";
 
 import { AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import UseKey from "../useKey/Usekey";
 
 function Header() {
+
     const [openDropDown, setOpenDropDown] = useState(false);
     const [openDropDownSearch, setOpenDropDownSearch] = useState(false);
     const [openDropModalThink, setDropModalThink] = useState(false);
-    
-    const openModal_think  = () => {
+
+    const openModal_think = () => {
         setDropModalThink(true);
         document.body.style.overflowY = "hidden";
     }
@@ -26,27 +27,25 @@ function Header() {
         document.body.style.removeProperty('overflow');
     }
 
-    function handlecloseModaldropInter(){
-        if(openDropDown) setOpenDropDown(false);
-        if(openDropDownSearch) setOpenDropDownSearch(false);
-        if(openDropModalThink) {
+    function handlecloseModaldropInter() {
+        if (openDropDown) setOpenDropDown(false);
+        if (openDropDownSearch) setOpenDropDownSearch(false);
+        if (openDropModalThink) {
             setDropModalThink(false);
             document.body.style.removeProperty('overflow');
         }
     }
-    UseKey("Escape",handlecloseModaldropInter);
+    UseKey("Escape", handlecloseModaldropInter);
 
-    const TextContentModalThink = () =>{
+    const TextContentModalThink = () => {
         return (
-            <>
-                <div>
-                    Hi everybody, đây là một bản beta bởi mình ấp ủ nó suốt thời gian học 
-                    bắt đầu đại học đến giờ,mình sẽ sáng tạo 1 cái giao diện mới cùng với kết hợp mp3
-                    để nó gọi là "sống động" một chút. Nó còn rất nhiều cái thiếu sót. <br></br>
-                    Mọi người nhận xét và cho em xin lời góp ý ạ. Em cảm ơn rất nhiều!<br></br>
-                    <div style={{ 'float': 'right' }}>Nguyễn Văn Phong</div>
-                </div>
-            </>
+            <div>
+                Hi everybody, đây là một bản beta bởi mình ấp ủ nó suốt thời gian học
+                bắt đầu đại học đến giờ,mình sẽ sáng tạo 1 cái giao diện mới cùng với kết hợp mp3
+                để nó gọi là "sống động" một chút. Nó còn rất nhiều cái thiếu sót. <br></br>
+                Mọi người nhận xét và cho em xin lời góp ý ạ. Em cảm ơn rất nhiều!<br></br>
+                <div style={{ 'float': 'right' }}>Nguyễn Văn Phong</div>
+            </div>
         );
     }
 
@@ -65,29 +64,29 @@ function Header() {
     }
     const handleOpenDropDown = () => {
         setOpenDropDown(!openDropDown);
-        
+
         if (openDropDownSearch) {
             setOpenDropDownSearch(false);
         }
     }
 
-    const list_history_search =[
+    const list_history_search = [
         "Nguyễn Đình Thiên",
         "#xuhuong",
         "Người tôi yêu là ai?"
     ]
-    const list_History = list_history_search.map((index)=>{
+    const list_History = list_history_search.map((index) => {
         return (
             <div className="item_content_before--search" key={index}>
                 <i className="fa-light fa-clock-rotate-left"></i>
-                    <span className="name_history">
-                        {index} 
-                    </span>
-                    
+                <span className="name_history">
+                    {index}
+                </span>
+
                 <div className="icon_delete__history">
-                    <i className="fa-regular fa-xmark"></i> 
+                    <i className="fa-regular fa-xmark"></i>
                 </div>
-            
+
             </div>
         )
     })
@@ -124,26 +123,7 @@ function Header() {
                     </div>
                     <div className="item__header-wrap wrap__item--navMenu">
                         <div className={`body__container--navMenu ${openDropDownSearch ? 'an-navMenu-drops-search-true' : ' an-navMenu-drops-search-false'}`}>
-                            <CustomLink to="/feed" >
-                                <i className="fa-light fa-house-chimney"></i>
-                                <div className="item__text--status"> Home</div>
-                            </CustomLink>
-                            <CustomLink to="/watching" >
-                                <i className="fa-light fa-clapperboard-play"></i>
-                                <div className="item__text--status"> Watching</div>
-                            </CustomLink>
-                            <CustomLink to="/music" >
-                                <i className="fa-light fa-folder-music"></i>
-                                <div className="item__text--status"> Music</div>
-                            </CustomLink>
-                            <CustomLink to="/marketplace" >
-                                <i className="fa-light fa-cart-shopping-fast"></i>
-                                <div className="item__text--status">Marketplace</div>
-                            </CustomLink>
-                            <CustomLink to="/typay" >
-                                <i class="fa-light fa-credit-card"></i>
-                                <div className="item__text--status"> TY Pay</div>
-                            </CustomLink>
+                            <CustomLink />
                         </div>
                         <div className={`box__dropdown--search ${openDropDownSearch ? 'active_Search' : 'inactive_Search'}`} >
                             <div className="container__box--search" >
@@ -152,7 +132,6 @@ function Header() {
                                 </div>
                                 <div className="ctr__search-flex">
                                     <input
-                                        // autoFocus
                                         type="text"
                                         placeholder="Search on Talk To You"
                                         id="yourtextbox"
