@@ -17,12 +17,11 @@ function Home() {
                     <div className="item__wrap--home wrap__newFeed">
                         <CreateStatus/>
                         <StatusFeed/>
-                        {/* <Map/>  */}
 
                     </div>
                     <div className="item__wrap--home wrap__complementary">
                         <Complementary />
-                        <AppInteractive />
+                        <AppInteractive/>
                     </div>
                 </div>
             </div>

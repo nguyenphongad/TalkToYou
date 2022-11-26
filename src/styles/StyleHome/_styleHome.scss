@@ -2,6 +2,8 @@
 .home {
     width: 100%;
     height: auto;
+    // position: relative;
+    // z-index: 66;
     .container__body--home {
         display: flex;
         .item__wrap--home {
@@ -323,6 +325,8 @@
                     width: 90%;
                     height: 1px;
                     background-color: #c9c9c9;
+
+
                 }
             }
         }
@@ -478,3 +482,9 @@
         }
     }
 }
+// .ok{
+//     color :red;
+// }
+// .ko{
+//     color :blue
+// }

@@ -28,7 +28,8 @@ function App() {
   return (
     <>
       {
-        post ? <BrowserRouter>
+        post ? 
+        <BrowserRouter>
           <div className="App">
             <div className="App_header">
               <Header />
@@ -38,8 +39,7 @@ function App() {
               <ScrollToTop />
             </div>
           </div>
-        </BrowserRouter> :
-          <LoadingPage />
+        </BrowserRouter> : <LoadingPage />
       }
       {/* <Map/> */}
     </>

@@ -6,15 +6,20 @@ import Logo_TTY from "../../assets/images_logo/logo_talk-to-you_v2.png";
 import CustomMenuHeader from "../Header/CustomMenuHeader/CustomMenuHeader";
 import ModalMation from "../Modal/ModalMation/ModalMation";
 
-import Avatar_TTY from "../../assets/images/photo_status_1/avatar_id-1.png";
+// import Avatar_TTY from "../../assets/images/photo_status_1/avatar_id-1.png";
 
 import { AnimatePresence } from "framer-motion";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import UseKey from "../useKey/Usekey";
+import { useContext } from "react";
+import { OpenModalProvider } from "../Interactive/DropDownReels/StateReelProvider";
+import ButtonDropDown from "./BorderDropAccount/ButtonDropDown";
+import { createContext } from "react";
+
+export const DropDownAccountButton = createContext();
 
 function Header() {
 
-    const [openDropDown, setOpenDropDown] = useState(false);
     const [openDropDownSearch, setOpenDropDownSearch] = useState(false);
     const [openDropModalThink, setDropModalThink] = useState(false);
 
@@ -28,7 +33,6 @@ function Header() {
     }
 
     function handlecloseModaldropInter() {
-        if (openDropDown) setOpenDropDown(false);
         if (openDropDownSearch) setOpenDropDownSearch(false);
         if (openDropModalThink) {
             setDropModalThink(false);
@@ -49,25 +53,8 @@ function Header() {
         );
     }
 
-    let dropRef = useRef();
-    useEffect(() => {
-        let handler = (e) => {
-            if (!dropRef.current.contains(e.target))
-                setOpenDropDown(false);
-        }
-        document.addEventListener("mousedown", handler);
-        return () => document.removeEventListener("mousedown", handler);
-    });
-
     const handleOpenDropDownSearch = () => {
         setOpenDropDownSearch(!openDropDownSearch);
-    }
-    const handleOpenDropDown = () => {
-        setOpenDropDown(!openDropDown);
-
-        if (openDropDownSearch) {
-            setOpenDropDownSearch(false);
-        }
     }
 
     const list_history_search = [
@@ -91,116 +78,95 @@ function Header() {
         )
     })
 
+    const toStateValueReel = useContext(OpenModalProvider);
+
+    const valueHeadToBtnAccount = {
+        openDropDownSearch,
+        setOpenDropDownSearch,
+        handleOpenDropDownSearch
+    }
+
     return (
         <>
-            <div className="header" >
-                <div className="header__wrap--row">
-                    <div className="item__header-wrap wrap__item--box_first">
-                        <div className="item_box_fisrt box__logo">
-                            <Link to="/feed">
-                                <img src={Logo_TTY} alt="logo" />
-                            </Link>
-                        </div>
-                        <div className="item_box_fisrt box__navication">
-                            <div className="btn_checked_navication"
-                                onClick={() => (openDropModalThink ? closeModal_think() : openModal_think())}>
-                                <div>Version</div>
-                                <i className="fa-duotone fa-circle-info"></i>
+            <DropDownAccountButton.Provider value={valueHeadToBtnAccount}>
+                <div
+                    className={`header ${toStateValueReel.openModalDropReel
+                        ? "isHide_header-active-reel" : "isShow_header-active-reel"}`}>
+                    <div className="header__wrap--row">
+                        <div className="item__header-wrap wrap__item--box_first">
+                            <div className="item_box_fisrt box__logo">
+                                <Link to="/feed">
+                                    <img src={Logo_TTY} alt="logo" />
+                                </Link>
                             </div>
-                        </div>
-                        <AnimatePresence
-                            initial={false}
-                            exitBeforeEnter={true}
-                            onExitComplete={() => null}
-                        >
-                            {openDropModalThink && <ModalMation
-                                modalOpen={openDropModalThink}
-                                handleClose={closeModal_think}
-                                text_header="Talk To You V2"
-                                content_modal={<TextContentModalThink />}
-                            />}
-                        </AnimatePresence>
-                    </div>
-                    <div className="item__header-wrap wrap__item--navMenu">
-                        <div className={`body__container--navMenu ${openDropDownSearch ? 'an-navMenu-drops-search-true' : ' an-navMenu-drops-search-false'}`}>
-                            <CustomMenuHeader />
-                        </div>
-                        <div className={`box__dropdown--search ${openDropDownSearch ? 'active_Search' : 'inactive_Search'}`} >
-                            <div className="container__box--search" >
-                                <div className="border-icon-search">
-                                    <i className="fa-regular fa-magnifying-glass"></i>
-                                </div>
-                                <div className="ctr__search-flex">
-                                    <input
-                                        type="text"
-                                        placeholder="Search on Talk To You"
-                                        id="yourtextbox"
-                                        autoComplete="off"
-                                    />
+                            <div className="item_box_fisrt box__navication">
+                                <div className="btn_checked_navication"
+                                    onClick={() => (openDropModalThink ? closeModal_think() : openModal_think())}>
+                                    <div>Version</div>
+                                    <i className="fa-duotone fa-circle-info"></i>
                                 </div>
                             </div>
+                            <AnimatePresence
+                                initial={false}
+                                exitBeforeEnter={true}
+                                onExitComplete={() => null}
+                            >
+                                {openDropModalThink && <ModalMation
+                                    modalOpen={openDropModalThink}
+                                    handleClose={closeModal_think}
+                                    text_header="Talk To You V2"
+                                    content_modal={<TextContentModalThink />}
+                                />}
+                            </AnimatePresence>
                         </div>
-                    </div>
-                    <div className="item__header-wrap wrap__item--accsign" >
-                        <div className="body__container--boxDropDown" >
-
-                            <div className="item__btn-dropDown btn__dropDown--search"
-                                onClick={handleOpenDropDownSearch}>
-                                <div className="border_search--header">
-                                    <i className={openDropDownSearch ? "fa-regular fa-bars" : "fa-regular fa-magnifying-glass"}></i>
-                                </div>
+                        <div className="item__header-wrap wrap__item--navMenu">
+                            <div className={`body__container--navMenu ${openDropDownSearch ? 'an-navMenu-drops-search-true' : ' an-navMenu-drops-search-false'}`}>
+                                <CustomMenuHeader />
                             </div>
-                            <div className="item__btn-dropDown btn__dropDown--account" ref={dropRef}>
-                                <div
-                                    className={`border__img-avatar--header ${openDropDown ? 'activeBtnDrop' : ''}`}
-                                    onClick={handleOpenDropDown} >
-                                    <img src={Avatar_TTY} />
-                                </div>
-                                <div className={`dropdown__accsign--account ${openDropDown ? 'active' : 'inactive'}`}>
-                                    <div className="box__dropwn--account" >
-                                        <div className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
-                                            <i className="fa-solid fa-user"></i>
-                                            Personal page
-                                        </div>
-                                        <div className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
-                                            <i className="fa-duotone fa-gear"></i>
-                                            Setting
-                                        </div>
-                                        <div className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
-                                            <i className="fa-duotone fa-screencast"></i>
-                                            Mode & Screen
-                                        </div>
-                                        <div className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
-                                            <i className="fa-duotone fa-keyboard"></i>
-                                            Shortcuts & Support
-                                        </div>
-                                        <div className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
-                                            <i class="fa-duotone fa-user-headset"></i>
-                                            Help
-                                        </div>
-                                        <div style={{ fontWeight: '780' }} className="item__dropwn--account" onClick={() => { setOpenDropDown(false) }}>
-                                            <i className="fa-solid fa-right-from-bracket"></i>
-                                            Log out
-                                        </div>
+                            <div className={`box__dropdown--search ${openDropDownSearch ? 'active_Search' : 'inactive_Search'}`} >
+                                <div className="container__box--search" >
+                                    <div className="border-icon-search">
+                                        <i className="fa-regular fa-magnifying-glass"></i>
+                                    </div>
+                                    <div className="ctr__search-flex">
+                                        <input
+                                            type="text"
+                                            placeholder="Search on Talk To You"
+                                            id="yourtextbox"
+                                            autoComplete="off"
+                                        />
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div className="item__header-wrap wrap__item--accsign" >
+                            <div className="body__container--boxDropDown" >
+
+                                <div className="item__btn-dropDown btn__dropDown--search"
+                                    onClick={handleOpenDropDownSearch}>
+                                    <div className="border_search--header">
+                                        <i className={openDropDownSearch ? "fa-regular fa-bars" : "fa-regular fa-magnifying-glass"}></i>
+                                    </div>
+                                </div>
+                                <ButtonDropDown />
+                            </div>
+                        </div>
+                        
+
                     </div>
 
                 </div>
-
-            </div>
-            <div className={`wrap__drops-suggest--search ${openDropDownSearch ? 'display-block-drops-search' : 'display-none-drops-search'}`}>
-                <div className="brg__drops--search" onClick={() => { setOpenDropDownSearch(false) }}>
-                </div>
-                <div className="wrap_box_suggest--search">
-                    <div className="box__suggest--search">
-                        <div className="heading_sg">Try searching for</div>
-                        {list_History}
+                <div className={`wrap__drops-suggest--search ${openDropDownSearch ? 'display-block-drops-search' : 'display-none-drops-search'}`}>
+                    <div className="brg__drops--search" onClick={() => { setOpenDropDownSearch(false) }}>
+                    </div>
+                    <div className="wrap_box_suggest--search">
+                        <div className="box__suggest--search">
+                            <div className="heading_sg">Try searching for</div>
+                            {list_History}
+                        </div>
                     </div>
                 </div>
-            </div>
+            </DropDownAccountButton.Provider>
         </>
     )
 }

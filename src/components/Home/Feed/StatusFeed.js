@@ -110,7 +110,7 @@ function StatusFeed() {
             type_post: "Friends",
             date_create_status: 9 + " munite ago",
 
-            content: "omg, dễ thương quá (●'◡'●)",
+            content: "Câu nói kỳ diệu nhất trên đời là: mọi thứ rồi sẽ qua thôi ❤",
             image: Photo_status_id_5,
             view_comment: 277,
             view_like: 993,

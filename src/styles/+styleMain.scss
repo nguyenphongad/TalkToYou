@@ -21,8 +21,8 @@ $main_box-shadow_header :2px 2px 4px 0 #a37c9b14, 2px 1px 2px 0px #ac5e9c2b, 2px
     @include styleBorderBackground();
     box-shadow: 3px 2px 8px 0px #0000002c;
     border: 1px solid #ddd4dafd;
-    backdrop-filter: blur(30px);
-    background: #ffffff96;
+    // backdrop-filter: blur(30px);
+    background: #ffffff;
 } 
 @mixin styleBackgroundLoading {
     width: 100%;

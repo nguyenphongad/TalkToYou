@@ -1,4 +1,3 @@
-
 @import "./+styleMain.scss";
 
 * {
@@ -10,20 +9,35 @@ body {
     margin: 0px;
     position: relative;
     top: 0px;
-        background: $main_color-bgr;
+    background: $main_color-bgr;
     .App {
         .App_header {
             width: 100%;
             // position: fixed;
-            top: 0px;
+            // top: 0px;
             // z-index: 0;
         }
         .App_body {
             width: 100%;
+            // padding: 70px 20px 0px 20px;
             padding: 70px 20px 0px 20px;
         }
     }
 }
+body::-webkit-scrollbar {
+    width: 4px;
+}
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: $main_color-text;
+    border-radius: 10px;
+}
+
+
+
 @import "./styleHeader.scss";
 
 @import "./StyleHome/styleHome.scss";
@@ -31,6 +45,7 @@ body {
 @import "./StyleHome/styleHomeComplementary";
 
 @import "./Pages/stylePages";
+
 @import "./Interactive/styleIteractive";
 
 .body_loading_start {
@@ -99,20 +114,19 @@ body {
 .body__loading__page {
     @include styleBackgroundLoading();
     background-color: #fff3fb;
-    .wrap_loading_page{
-        i{
+    .wrap_loading_page {
+        i {
             font-size: 60px;
             color: #be0a88;
             animation: an_icon_loading_page 1s linear infinite;
             @keyframes an_icon_loading_page {
-                from{
+                from {
                     transform: rotate(0deg);
                 }
-                to{
+                to {
                     transform: rotate(360deg);
                 }
             }
         }
-        
     }
 }
