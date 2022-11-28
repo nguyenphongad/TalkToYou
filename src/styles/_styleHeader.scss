@@ -61,7 +61,7 @@
                         transition: all 0.4s;
                     }
                     &:hover {
-                        transform: translateY(-3px);
+                        @include styleHoverTranSty();
                     }
                 }
             }
@@ -260,7 +260,7 @@
                         top: -2px;
                     }
                     &:hover {
-                        transform: translateY(-3px);
+                        @include styleHoverTranSty();
                     }
                 }
             }
@@ -381,7 +381,7 @@
             border-radius: 100%;
         }
         &:hover {
-            transform: translateY(-3px);
+            @include styleHoverTranSty();
         }
     }
     .activeBtnDrop {

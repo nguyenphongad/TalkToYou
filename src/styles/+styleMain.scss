@@ -39,3 +39,6 @@ $main_box-shadow_header :2px 2px 4px 0 #a37c9b14, 2px 1px 2px 0px #ac5e9c2b, 2px
     align-items: center;
     justify-content: center;
 }
+@mixin styleHoverTranSty{
+    transform: translateY(-2px);
+}

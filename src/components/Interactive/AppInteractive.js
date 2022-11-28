@@ -21,23 +21,12 @@ function ItemModalDrops(props) {
 function AppInteractive() {
 
     const [openModalDropChat, setOpenModalDropChat] = useState(false);
-    // const [openModalDropReel, setOpenModalDropReel] = useState(false);
     const [openModalDropNoti, setOpenModalDropNoti] = useState(false);
     const [openModalDropMenuMore, setOpenModalDropMenuMore] = useState(false);
 
     const handleOpenDropChat = () => { setOpenModalDropChat(!openModalDropChat); }
-    // const handleOpenDropReel = () => { 
-    //     setOpenModalDropReel(true);
-    //     document.body.style.overflowY = "hidden";
-        
-    // }
     const handleOpenDropNoti = () => { setOpenModalDropNoti(!openModalDropNoti); }
     const handleOpenDropMenuMore = () => { setOpenModalDropMenuMore(!openModalDropMenuMore); }
-
-    // const handleCloseDropReel = () =>{ 
-    //     setOpenModalDropReel(false)
-    //     document.body.style.overflowY = "scroll";
-    // }
 
     let dropRefModalChat = useRef();
     let dropRefModalNoti = useRef();
@@ -65,7 +54,7 @@ function AppInteractive() {
             if (!dropRefModalMenuMore.current.contains(e.target))
                 setOpenModalDropMenuMore(false);
         }
-        document.addEventListener("mousedown", handlerMenuMore);
+        document.addEventListener("mousedown", handlerMenuMore); 
         return () => document.removeEventListener("mousedown", handlerMenuMore);
     });
 
@@ -84,9 +73,7 @@ function AppInteractive() {
             <div className="body__interactive--row">
                 <div 
                 className={`item__control--inter ${toStateValueReel.openModalDropReel ? "disable_btn-border-reel" : ""}`} >
-                    <div 
-                    // className={`border-style-btn ${openModalDropReel ? "disable_btn-border-reel" : ""}`} 
-                    className="border-style-btn"
+                    <div className="border-style-btn"
                     onClick={toStateValueReel.handleOpenDropReel}>
                         <i className="fa-solid fa-elevator"></i>
                     </div>

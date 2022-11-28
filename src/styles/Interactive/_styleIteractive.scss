@@ -50,7 +50,7 @@
                 }
             }
         }
-        .disable_btn-border-reel{
+        .disable_btn-border-reel {
             width: 0px;
             opacity: 0;
             transform: scale(0);
@@ -174,8 +174,12 @@
                     justify-content: right;
                     animation: an_border_btn_closeDrop 0.4s;
                     @keyframes an_border_btn_closeDrop {
-                        from{transform: translateX(80px);}
-                        to{transform: translateX(0px);}
+                        from {
+                            transform: translateX(80px);
+                        }
+                        to {
+                            transform: translateX(0px);
+                        }
                     }
                     .border_btn_closeDrops--reel {
                         width: 40px;
@@ -183,43 +187,89 @@
                         @include styleBoxBackGroundBlur();
                         @include styleDisFlexCenter();
                         background: $main_color-white;
-                        border-radius:100% ;
+                        border-radius: 100%;
                         cursor: pointer;
                         color: $main_color-text;
                         transition: all 0.4s;
                         margin-left: 15px;
-                        &:hover{transform: translateY(-4px);}
-                        i{
+                        &:hover {
+                            transform: translateY(-4px);
+                        }
+                        i {
                             font-size: 24px;
                         }
                     }
                 }
-                .btn_heading-reel{
+                .btn_heading-reel {
                     animation: an_border_btn_headingDrop 0.4s;
                     @keyframes an_border_btn_headingDrop {
-                        from{transform: translateX(-80px);}
-                        to{transform: translateX(0px);}
+                        from {
+                            transform: translateX(-80px);
+                        }
+                        to {
+                            transform: translateX(0px);
+                        }
                     }
-                    .text_heading-reel{
+                    .text_heading-reel {
                         font-weight: 600;
                         font-size: 35px;
                     }
                 }
             }
         }
-        .container_body--reel{
-            width: 100%;height: 100%;
+        .container_body--reel {
+            width: 100%;
+            height: 100%;
             @include styleDisFlexCenter();
             align-items: baseline;
-            margin-top: 20px;
-            .box_content--reel{
-                width: 300px;height: 500px;
-                background-color: red;
-                @include styleBoxBackGroundBlur();
-                animation: an_box_content_reel 0.4s;
-                @keyframes an_box_content_reel {
-                    from{transform: scale(0.9);}
-                    to{transform: scale(1);}
+            .wrap_body-content {
+                width: 300px;
+                .box_content--reel {
+                    width: 100%;
+                    height: 533px;
+                    background-color: red;
+                    @include styleBoxBackGroundBlur();
+                    border: none;
+                    position: relative;
+                    animation: an_box_content_reel 0.4s;
+                    @keyframes an_box_content_reel {
+                        from {
+                            transform: scale(0.9);
+                        }
+                        to {
+                            transform: scale(1);
+                        }
+                    }
+                    .box_control--reel {
+                        width: 100%;
+                        height: 40px;
+                        background-color: #0000004d;
+                        position: absolute;
+                        bottom: 0px;
+                        border-radius: 0px 0px 12px 12px;
+                        .tr__control-btn{
+                            height:100%;
+                            display:flex;
+                            .border_control-btn{
+                                width: 100%;
+                                margin: 5px;
+                                @include styleDisFlexCenter();
+                                .border_st-radius{
+                                    width: 30px;height: 30px;
+                                    @include styleDisFlexCenter();
+                                    cursor: pointer;
+                                    i{
+                                        color: $main_color-text;
+                                        font-size: 20px;
+                                        transition: all 0.4s;
+                                        &:hover{
+                                            @include styleHoverTranSty();
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -256,7 +306,7 @@
                         margin-left: 10px;
                     }
                     &:hover {
-                        transform: translateY(-4px);
+                        @include styleHoverTranSty();
                     }
                 }
             }
@@ -275,10 +325,10 @@
         transform: scale(0.98);
         transition: 0.2s ease-out;
     }
-    .isShow-display{
+    .isShow-display {
         display: block;
     }
-    .isHide-display{
+    .isHide-display {
         display: none;
     }
 }
